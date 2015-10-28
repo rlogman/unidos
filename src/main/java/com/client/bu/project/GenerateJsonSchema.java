@@ -410,11 +410,11 @@ public class GenerateJsonSchema {
 					getTimeframeField(),
 					new FieldBuilder().name("sortType")
 							.possibleValues(new String[] {
-									"flightNumber",
-									"screduledDepartueTime",
-									"estimatedDepartueTime",
-									"actualDepartueTime",
-									"screduledArrivalTime",
+									"tailNumber",
+									"scheduledDepartureTime",
+									"estimatedDepartureTime",
+									"actualDepartureTime",
+									"scheduledArrivalTime",
 									"estimatedArrivalTime",
 									"actualArrivaleTime",
 									"highestSeverityFirst",
@@ -465,10 +465,10 @@ public class GenerateJsonSchema {
 								.type(StringType.class)
 								.possibleValues(new String[] {
 										"flightNumber",
-										"screduledDepartueTime",
-										"estimatedDepartueTime",
-										"actualDepartueTime",
-										"screduledArrivalTime",
+										"scheduledDepartureTime",
+										"estimatedDepartureTime",
+										"actualDepartureTime",
+										"scheduledArrivalTime",
 										"estimatedArrivalTime",
 										"actualArrivaleTime",
 										"highestSeverityFirst",
@@ -509,7 +509,60 @@ public class GenerateJsonSchema {
 				}).build()).build())
 				.build());
 		endpoints.add(new ServiceDescriptorBuilder()
-				.name("getAlertsPreviewInformation")
+				.name("getAlertsCrewView")
+				.description("")
+				.urlPattern("")
+				.parameters(new Field[] {
+						getTimeframeField(),
+						new FieldBuilder()
+								.name("sortType")
+								.type(StringType.class)
+								.possibleValues(new String[] {
+										"fileNumber",
+										"departureTime",
+										"arrivalTime",
+										"seniority",
+										"alertAssignment",
+										"severity",
+										"domicile",
+								})
+								.build(),
+				})
+				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+						new FieldBuilder()
+							.name("flightNumber")
+							.type(StringType.class)
+							.build(),
+						new FieldBuilder().name("fromAirport")
+								.type(getAirportType())
+								.build(),
+						new FieldBuilder().name("toAirport")
+								.type(getAirportType())
+								.build(),
+						new FieldBuilder()
+								.name("severityIndicator")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("alertTypeCategory")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("alertTypeSubCategory")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("local.assignedIndicator")
+								.type(BooleanType.class)
+								.build(),
+						new FieldBuilder()
+								.name("local.watchedByMeIndicator")
+								.type(BooleanType.class)
+								.build(),
+				}).build()).build())
+				.build());
+		endpoints.add(new ServiceDescriptorBuilder()
+				.name("getAlertPreviewInformation")
 				.description("")
 				.urlPattern("")
 				.parameters(new Field[] {
@@ -531,7 +584,7 @@ public class GenerateJsonSchema {
 								.build(),
 						new FieldBuilder()
 								.name("assignedIndicator")
-								.type(StringType.class)
+								.type(StringType.class)  // FIXME validate type
 								.build(),
 						new FieldBuilder()
 								.name("pairingId")
@@ -587,7 +640,7 @@ public class GenerateJsonSchema {
 				.urlPattern("")
 				.parameters(new Field[] {
 				})
-				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {	
+				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
 						new FieldBuilder()
 								.name("name")
 								.type(StringType.class)
@@ -606,8 +659,179 @@ public class GenerateJsonSchema {
 								.build(),
 				}).build()).build())
 				.build());
-
+		// FIXME add filter-related endpoints
+		// FIXME add "general" section endpoints
+		// FIXME add comments section endpoints
+		
+		endpoints.add(new ServiceDescriptorBuilder()
+				.name("local.getTimezones")
+				.description("")
+				.urlPattern("")
+				.parameters(new Field[] {
+						new FieldBuilder()
+						.name("flightNumber")
+						.type(StringType.class)
+						.build(),
+				})
+				.returnType(new ObjectBuilder().fields(new Field[] {
+						new FieldBuilder()
+								.name("flightNumber")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder().name("fromAirport")
+								.type(getAirportType())
+								.build(),
+						new FieldBuilder().name("toAirport")
+								.type(getAirportType())
+								.build(),
+						new FieldBuilder()
+								.name("status")
+								.type(new ObjectBuilder().fields(new Field[] {
+										new FieldBuilder()
+												.name("onTime")
+												.type(BooleanType.class)
+												.build(),
+										new FieldBuilder()
+												.name("missconnected")
+												.type(BooleanType.class)
+												.build(),
+										new FieldBuilder()
+												.name("delayed")
+												.type(BooleanType.class)
+												.build(),
+										new FieldBuilder()
+												.name("inMaintenance")
+												.type(BooleanType.class)
+												.build(),
+										new FieldBuilder()
+												.name("canceled")
+												.type(BooleanType.class)
+												.build(),
+										new FieldBuilder()
+												.name("inProgress")
+												.type(BooleanType.class)
+												.build(),
+										new FieldBuilder()
+												.name("decision")
+												.type(StringType.class)
+												.possibleValues(new String[] {
+														"pending-delay",
+														"pending-on-time"
+												})
+												.build(),
+								}).build())
+								.build(),
+						new FieldBuilder().name("scheduledDepartureTimestamp")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("scheduledArrivalTimestamp")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("estimatedDepartureTimestamp")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("estimatedArrivalTimestamp")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("actualDepartureTimestamp")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("actualArrivalTimestamp")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("scheduledFlightTime")
+								.type(DateTimeType.DURATION_MINUTES)
+								.build(),
+						new FieldBuilder().name("fdpCco")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("blkCco")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("bmt")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("taxiIn")
+								.type(DateTimeType.DURATION_MINUTES)
+								.build(),
+						new FieldBuilder()
+								.name("dispatcher")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("departureGate")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("arrivalGate")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder().name("flightHistory")
+								.type(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+										new FieldBuilder()
+												.name("kind")
+												.type(StringType.class)
+												.possibleValues(new String[] {
+														"arrival_time",
+														"departure_time",
+														"pairings"
+												}).build(),
+										new FieldBuilder().name("timestamp")
+												.type(DateTimeType.UTC_TIMESTAMP_SECONDS)
+												.build(),
+										new FieldBuilder().name("local.who")
+												.type(StringType.class)
+												.build(),
+										new FieldBuilder().name("local.comments")
+												.type(StringType.class)
+												.build(),
+										
+								}).build()).build())
+								.build(),
+						new FieldBuilder().name("associatedPairings")
+								.type(getPairingSummaryCollectionType())
+								.build(),
+				}).build())
+				.build());
+		// TODO add endpoints to support comments at flight level
 		return endpoints;
+	}
+
+	private static CollectionType getPairingSummaryCollectionType() {
+		return new CollectionBuilder().itemType(getPairingSummaryType()).build();
+	}
+
+	private static ObjectType getPairingSummaryType() {
+		return new ObjectBuilder().fields(
+				new Field[] {
+						new FieldBuilder().name("pairingId")
+						.type(StringType.class)
+						.build(),
+						new FieldBuilder().name("pairingCode")
+						.type(StringType.class)
+						.build(),
+						new FieldBuilder().name("domicile")
+						.type(getDomicileType())
+						.build(),
+						new FieldBuilder().name("dhd")
+						.type(StringType.class)		// FIXME find out what this is
+						.build(),
+						new FieldBuilder().name("status")
+						.type(StringType.class)		// FIXME validate type
+						.possibleValues(new String[] {
+								"LH", "RSV"
+						})
+						.build(),
+						new FieldBuilder().name("crewMembers")
+						.type(getCrewMemberSummaryCollectionType())
+						.build(),
+						new FieldBuilder().name("alertType")
+						.type(StringType.class)
+						.build(),
+						new FieldBuilder().name("lastUpdated")
+						.type(DateTimeType.UTC_TIMESTAMP_SECONDS)
+						.build(),
+				}).build();
 	}
 
 	private static Field[] getTimeframeAndTypeFieldArray() {
@@ -741,6 +965,39 @@ public class GenerateJsonSchema {
 				}).build();
 	}
 
+	private static Type getCrewMemberSummaryCollectionType() {
+		return new CollectionBuilder().itemType(getCrewMemberSummaryType()).build();
+	}
+
+	private static Type getCrewMemberSummaryType() {
+		return new ObjectBuilder().fields(
+				new Field[] {
+						new FieldBuilder().name("crewMemberId")
+						.type(StringType.class)
+						.build(),
+						new FieldBuilder().name("firstName")
+						.type(StringType.class)
+						.build(),
+						new FieldBuilder().name("lastName")
+						.type(StringType.class)
+						.build(),
+						new FieldBuilder().name("class")
+						.type(StringType.class)
+						.possibleValues(new String[] { "Pilot", "FA"})
+						.build(),
+						new FieldBuilder().name("laborUnionCode")
+						.type(StringType.class)
+						.possibleValues(new String[] { "sUA", "sCO"})
+						.build(),
+						new FieldBuilder().name("seniority")
+						.type(StringType.class)
+						.build(),
+						new FieldBuilder().name("domicileId")
+						.type(StringType.class)
+						.build(),
+				}).build();
+	}
+
 	private static Type getCrewMemberCollectionType() {
 		return new CollectionBuilder().itemType(getCrewMemberType()).build();
 	}
@@ -757,19 +1014,13 @@ public class GenerateJsonSchema {
 						new FieldBuilder().name("lastName")
 						.type(StringType.class)
 						.build(),
-						new FieldBuilder().name("type")
+						new FieldBuilder().name("class")
 						.type(StringType.class)
 						.possibleValues(new String[] { "Pilot", "FA"})
 						.build(),
 						new FieldBuilder().name("laborUnionCode")
 						.type(StringType.class)
 						.possibleValues(new String[] { "sUA", "sCO"})
-						.build(),
-						new FieldBuilder().name("seniority")
-						.type(StringType.class)
-						.build(),
-						new FieldBuilder().name("domicileId")
-						.type(StringType.class)
 						.build(),
 				}).build();
 	}

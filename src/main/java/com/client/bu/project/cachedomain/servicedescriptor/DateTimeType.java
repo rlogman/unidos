@@ -11,9 +11,23 @@ public class DateTimeType extends Primitive {
 		}
 	};
 
+	public static final Type UTC_TIMESTAMP_SECONDS = new DateTimeType() {
+		{
+			this.format = "yyyy-MM-ddTHH:mm:ss";
+			this.timeZone = "UTC";
+		}
+	};
+
 	public static final Type UTC_DATE = new DateTimeType() {
 		{
 			this.format = "yyyy-MM-dd";
+			this.timeZone = "UTC";
+		}
+	};
+
+	public static final Type DURATION_MINUTES = new DateTimeType() {
+		{
+			this.format = "HH:mm";
 			this.timeZone = "UTC";
 		}
 	};
