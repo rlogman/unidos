@@ -840,14 +840,19 @@ public class GenerateJsonSchema {
 								.name("lastUpdate")
 								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
 								.build(),
-                                                new FieldBuilder()
-                                                                .name("scheduledDepartureTimestamp")
-						                .type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-						                .build(),
-						new FieldBuilder()
-                                                                .name("scheduledArrivalTimestamp")
-						                .type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-						                .build(),
+                                                
+                                                new FieldBuilder().name("scheduledDepartureTimestamp")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+                                                new FieldBuilder().name("actualDepartureTimestamp")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("scheduledArrivalTimestamp")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+						new FieldBuilder().name("actualArrivalTimestamp")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
 					
 				}).build()).build())
 				.build());
