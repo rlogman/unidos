@@ -561,6 +561,12 @@ public class GenerateJsonSchema {
 								.build(),
 				}).build()).build())
 				.build());
+                
+                
+                
+                
+                
+                
 		endpoints.add(new ServiceDescriptorBuilder()
 				.name("getAlertPreviewInformation")
 				.description("")
@@ -793,6 +799,58 @@ public class GenerateJsonSchema {
 								.build(),
 				}).build())
 				.build());
+                
+                endpoints.add(new ServiceDescriptorBuilder()
+				.name("getAlertsAssociatedToAParing")
+				.description("")
+				.urlPattern("")
+				.parameters(new Field[] {
+						getTimeframeField(),
+                                                new FieldBuilder().name("pairingId")
+										.type(StringType.class).build()
+						
+				})
+				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+						new FieldBuilder()
+                                                        .name("severity")
+							.type(StringType.class)
+							.build(),
+						new FieldBuilder().name("alertType")
+								.type(StringType.class)
+								.build(),
+                                                new FieldBuilder().name("affectedPairings")
+								.type(getPairingCollectionType())
+								.build(),
+						new FieldBuilder().name("crewAffected")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("numberFlight")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("AssignedTo")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("watchers")
+								.type(getWatchers())
+								.build(),
+						new FieldBuilder()
+								.name("lastUpdate")
+								.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+								.build(),
+                                                new FieldBuilder()
+                                                                .name("scheduledDepartureTimestamp")
+						                .type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+						                .build(),
+						new FieldBuilder()
+                                                                .name("scheduledArrivalTimestamp")
+						                .type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+						                .build(),
+					
+				}).build()).build())
+				.build());
 		// TODO add endpoints to support comments at flight level
 		return endpoints;
 	}
@@ -996,6 +1054,7 @@ public class GenerateJsonSchema {
 						.type(StringType.class)
 						.build(),
 				}).build();
+                
 	}
 
 	private static Type getCrewMemberCollectionType() {
@@ -1023,6 +1082,8 @@ public class GenerateJsonSchema {
 						.possibleValues(new String[] { "sUA", "sCO"})
 						.build(),
 				}).build();
+                
+                
 	}
 
 	private static Type getFlightLegCollectionType() {
@@ -1128,6 +1189,9 @@ public class GenerateJsonSchema {
 				}).build();
 	}
 
+        private static CollectionType getWatchers() {
+		return new CollectionBuilder().itemType(getPairingType()).build();
+	}
 	private static void generateJsonSchema(Class<?>[][] classGroups)
 			throws JsonProcessingException {
 		ObjectMapper mapper = new ObjectMapper();
@@ -1146,7 +1210,7 @@ public class GenerateJsonSchema {
 			SchemaFactoryWrapper visitor, Class<T> clazz)
 			throws JsonProcessingException {
 		mapper.acceptJsonFormatVisitor(clazz, visitor);
-		JsonSchema schema = visitor.finalSchema();
+           	JsonSchema schema = visitor.finalSchema();
 		return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(
 				schema);
 	}
