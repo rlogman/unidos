@@ -25,6 +25,20 @@ public class DateTimeType extends Primitive {
 		}
 	};
 
+	public static final Type UTC_MONTH = new DateTimeType() {
+		{
+			this.format = "yyyy-MM";
+			this.timeZone = "UTC";
+		}
+	};
+
+	public static final Type DURATION_HOURS = new DateTimeType() {
+		{
+			this.format = "HH";
+			this.timeZone = "UTC";
+		}
+	};
+
 	public static final Type DURATION_MINUTES = new DateTimeType() {
 		{
 			this.format = "HH:mm";
