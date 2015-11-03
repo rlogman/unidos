@@ -150,7 +150,7 @@ public class GenerateJsonSchema {
 								.type(StringType.class)
 								.build(),
 						new FieldBuilder().name("date")
-								.type(StringType.class)
+								.type(DateTimeType.UTC_DATE)
 								.build(),
 						new FieldBuilder().name("flightCount")
 								.type(StringType.class)
@@ -670,7 +670,7 @@ public class GenerateJsonSchema {
 		// FIXME add comments section endpoints
 		
 		endpoints.add(new ServiceDescriptorBuilder()
-				.name("local.getTimezones")
+				.name("getFlightInformation")
 				.description("")
 				.urlPattern("")
 				.parameters(new Field[] {
@@ -857,7 +857,398 @@ public class GenerateJsonSchema {
 				}).build()).build())
 				.build());
 		// TODO add endpoints to support comments at flight level
+		endpoints.add(new ServiceDescriptorBuilder()
+				.name("getPairingInformation")
+				.description("")
+				.urlPattern("")
+				.parameters(new Field[] {	// TODO validate parameters
+				})
+				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+						new FieldBuilder()
+								.name("pairingNumber")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("dayCount")
+								.type(Int32.class)
+								.build(),
+						new FieldBuilder()
+								.name("segmentCount")
+								.type(Int32.class)
+								.build(),
+						new FieldBuilder()
+								.name("flightDuration")
+								.type(DateTimeType.DURATION_MINUTES)
+								.build(),
+						new FieldBuilder()
+								.name("flightDuration2")	// TODO clarify why there are 2 times
+								.type(DateTimeType.DURATION_MINUTES)
+								.build(),
+						new FieldBuilder()
+								.name("layoverCities")
+								.type(new CollectionBuilder().itemType(StringType.class).build())  // TODO decide whether this is a string or an airport object
+								.build(),
+						new FieldBuilder()
+								.name("hoursAwayCount")
+								.type(DateTimeType.DURATION_HOURS)
+								.build(),
+						new FieldBuilder()
+								.name("dhdTime")
+								.type(DateTimeType.DURATION_MINUTES)
+								.build(),
+						new FieldBuilder()
+								.name("guaranteedTime")
+								.type(DateTimeType.DURATION_MINUTES)
+								.build(),
+						new FieldBuilder()
+								.name("guaranteedTime2")	// TODO clarify why there are 2 times
+								.type(DateTimeType.DURATION_MINUTES)
+								.build(),
+						new FieldBuilder()
+								.name("payTimeInHours")
+								.type(DateTimeType.DURATION_HOURS)
+								.build(),
+						new FieldBuilder()
+								.name("dutyPeriods")
+								.type(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+										new FieldBuilder()
+												.name("reportTime")
+												.type(DateTimeType.DURATION_MINUTES)
+												.build(),
+										new FieldBuilder()
+												.name("debriefTime")
+												.type(DateTimeType.DURATION_MINUTES)
+												.build(),
+										new FieldBuilder()
+												.name("scheduledDutyTime")
+												.type(DateTimeType.DURATION_MINUTES)
+												.build(),
+										new FieldBuilder()
+												.name("actualDutyTime")
+												.type(DateTimeType.DURATION_MINUTES)
+												.build(),
+										new FieldBuilder()
+												.name("scheduledFlightTime")
+												.type(DateTimeType.DURATION_MINUTES)
+												.build(),
+										new FieldBuilder()
+												.name("actualFlightTime")
+												.type(DateTimeType.DURATION_MINUTES)
+												.build(),
+										new FieldBuilder()
+												.name("flightNumber")
+												.type(StringType.class)
+												.build(),
+										new FieldBuilder().name("fromAirport")
+												.type(getAirportType())
+												.build(),
+										new FieldBuilder().name("toAirport")
+												.type(getAirportType())
+												.build(),
+										new FieldBuilder()
+												.name("status")
+												.type(new ObjectBuilder().fields(new Field[] {
+														new FieldBuilder()
+																.name("onTime")
+																.type(BooleanType.class)
+																.build(),
+														new FieldBuilder()
+																.name("missconnected")
+																.type(BooleanType.class)
+																.build(),
+														new FieldBuilder()
+																.name("delayed")
+																.type(BooleanType.class)
+																.build(),
+														new FieldBuilder()
+																.name("inMaintenance")
+																.type(BooleanType.class)
+																.build(),
+														new FieldBuilder()
+																.name("canceled")
+																.type(BooleanType.class)
+																.build(),
+														new FieldBuilder()
+																.name("inProgress")
+																.type(BooleanType.class)
+																.build(),
+												}).build())
+												.build(),
+										new FieldBuilder().name("scheduledDepartureTimestamp")
+												.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+												.build(),
+										new FieldBuilder().name("scheduledArrivalTimestamp")
+												.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+												.build(),
+										new FieldBuilder().name("estimatedDepartureTimestamp")
+												.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+												.build(),
+										new FieldBuilder().name("estimatedArrivalTimestamp")
+												.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+												.build(),
+										new FieldBuilder().name("scheduledFlightTime")
+												.type(DateTimeType.DURATION_MINUTES)
+												.build(),
+										new FieldBuilder()
+												.name("dispatcher")
+												.type(StringType.class)
+												.build(),
+										new FieldBuilder()
+												.name("departureGate")
+												.type(StringType.class)
+												.build(),
+										new FieldBuilder()
+												.name("arrivalGate")
+												.type(StringType.class)
+												.build(),
+										new FieldBuilder()
+												.name("extraFlightInformation")
+												.type(new ObjectBuilder().fields(new Field[] {
+														new FieldBuilder()
+																.name("lastUpdated")
+																.type(DateTimeType.UTC_TIMESTAMP_SECONDS)
+																.build(),
+														new FieldBuilder()
+																.name("noseNumber")
+																.type(StringType.class)
+																.build(),
+														new FieldBuilder()
+																.name("capacity")
+																.type(Int32.class)
+																.build(),
+														new FieldBuilder()
+																.name("plannedSeatsPerCategory")
+																.type(new ObjectBuilder().fields(new Field[] {
+																		new FieldBuilder()
+																				.name("category")
+																				.type(StringType.class)
+																				.build(),
+																		new FieldBuilder()
+																				.name("seatCount")
+																				.type(Int32.class)
+																				.build(),
+																}).build())
+																.build(),
+														new FieldBuilder()
+																.name("crewMeal")
+																.type(new ObjectBuilder().fields(new Field[] {
+																		new FieldBuilder()
+																				.name("mealType")
+																				.type(StringType.class)
+																				.possibleValues(new String[] {
+																						"Breakfast",
+																						"Lunch",
+																						"Dinner",
+																						"Other"	// TODO validate these values
+																				})
+																				.build(),
+																		new FieldBuilder()
+																				.name("mealDescription")
+																				.type(Int32.class)
+																				.build(),
+																}).build())
+																.build(),
+												}).build())
+												.build(),
+								}).build()).build())
+								.build(),
+						new FieldBuilder()
+								.name("sitTime")
+								.type(DateTimeType.DURATION_MINUTES)
+								.build(),
+						new FieldBuilder()
+								.name("layoverTime")
+								.type(new ObjectBuilder().fields(new Field[] {
+										new FieldBuilder()
+												.name("time")
+												.type(DateTimeType.DURATION_MINUTES)
+												.build(),
+										new FieldBuilder()
+												.name("station")
+												.type(getAirportType())
+												.build(),
+										new FieldBuilder()
+												.name("toHotelTransportation")
+												.type(getTransportationType())
+												.build(),
+										new FieldBuilder()
+												.name("hotel")
+												.type(getHotelType())
+												.build(),
+										new FieldBuilder()
+												.name("toAirportTransportation")
+												.type(getTransportationType())
+												.build(),
+								}).build())
+								.build(),
+						new FieldBuilder()
+								.name("crewInformation")
+								.type(getCrewInformationCollectionType())
+								.build(),
+				}).build()).build())
+				.build());
+		endpoints.add(new ServiceDescriptorBuilder()
+				.name("getMasterScheduleList")
+				.description("")
+				.urlPattern("")
+				.parameters(new Field[] {	// TODO Validate
+				})
+				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+						new FieldBuilder()
+								.name("id")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("position")
+								.type(StringType.class)
+								.possibleValues(new String[] {
+										// FIXME provide possible values
+								})
+								.build(),
+						new FieldBuilder()
+								.name("firstName")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("lastName")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder().name("domicile")
+								.type(getDomicileType())
+								.build(),
+						new FieldBuilder()
+								.name("cellPhone")
+								.type(StringType.class)
+								.build(),
+						new FieldBuilder()
+								.name("alertsAssociated")
+								.type(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+										new FieldBuilder().name("severity")
+												.type(StringType.class)
+												.possibleValues(new String[] {
+														// FIXME provide possible values
+												})
+												.build(),
+										new FieldBuilder().name("type")
+												.type(StringType.class)
+												.possibleValues(new String[] {
+														// FIXME provide possible values
+												})
+												.build(),
+										new FieldBuilder().name("pairingsAffected")	// TODO is this an enumeration or a count?
+												.type(new CollectionBuilder().itemType(StringType.class).build())	// TODO Validate
+												.build(),
+										new FieldBuilder().name("pilotsAffectedCount")
+												.type(Int32.class)
+												.build(),
+										new FieldBuilder()
+												.name("affectedFACount")
+												.type(Int32.class)
+												.build(),
+										new FieldBuilder()
+												.name("affectedPilotsCount")
+												.type(Int32.class)
+												.build(),
+								})
+								.build()).build())
+								.build(),
+						new FieldBuilder()
+								.name("lastUpdate")
+								.type(DateTimeType.UTC_TIMESTAMP_SECONDS)
+								.build(),
+				}).build()).build())
+				.build());
 		return endpoints;
+	}
+
+	private static Type getTransportationType() {
+		return new ObjectBuilder().fields(new Field[] {
+				new FieldBuilder().name("companyName")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("pickupTime")
+						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+						.build(),
+				new FieldBuilder().name("pickupLocation")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("phone")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("voucherNumber")
+						.type(StringType.class)
+						.build(),
+		}).build();
+	}
+
+	private static Type getHotelType() {
+		return new ObjectBuilder().fields(new Field[] {
+				new FieldBuilder().name("name")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("address")
+						.type(getAddressType())
+						.build(),
+				new FieldBuilder().name("phone")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("reservationNumber")
+						.type(StringType.class)
+						.build(),
+		}).build();
+	}
+
+	private static Type getAddressType() {
+		return new ObjectBuilder().fields(new Field[] {
+				new FieldBuilder().name("address1")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("address2")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("city")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("stateOrProvince")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("postalCode")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("country")
+						.type(StringType.class)
+						.build(),
+		}).build();
+	}
+
+	private static CollectionType getCrewInformationCollectionType() {
+		return new CollectionBuilder().itemType(getCrewInformationType()).build();
+	}
+
+	private static Type getCrewInformationType() {
+		return new ObjectBuilder().fields(new Field[] {
+				new FieldBuilder().name("id")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("photoUrl")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("firstName")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("lastName")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("position")
+						.type(StringType.class)	// TODO clarify/validate this
+						.build(),
+				new FieldBuilder().name("last3Landings")
+						.type(new CollectionBuilder().itemType(DateTimeType.UTC_TIMESTAMP_MINUTES).build())
+						.build(),
+				new FieldBuilder().name("nextExpirationDate")
+						.type(DateTimeType.UTC_DATE)
+						.build(),
+		}).build();
 	}
 
 	private static CollectionType getPairingSummaryCollectionType() {
