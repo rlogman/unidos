@@ -5,16 +5,12 @@
  */
 package com.client.bu.project.cachedomain.endpoints;
 
-import com.client.bu.project.cachedomain.servicedescriptor.BooleanType;
 import com.client.bu.project.cachedomain.servicedescriptor.CollectionBuilder;
-import com.client.bu.project.cachedomain.servicedescriptor.CollectionType;
 import com.client.bu.project.cachedomain.servicedescriptor.Field;
 import com.client.bu.project.cachedomain.servicedescriptor.FieldBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.ObjectBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.ServiceDescriptorBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.StringType;
-import com.client.bu.project.cachedomain.util.CrewSchedulingUtils;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type;
 
 /**
  *
