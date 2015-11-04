@@ -19,10 +19,10 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
  * @since 1.0
  * @version 1.0
  */
-public class GetUnderGuaranteeFAReport extends ServiceDescriptorBuilder {
+public class GetFAOpenTripsReport extends ServiceDescriptorBuilder {
 
-	public GetUnderGuaranteeFAReport() {
-		this.name("getUnderGuaranteeFAReport")
+	public GetFAOpenTripsReport() {
+		this.name("getFAOpenTripsReport")
 		.description("")
 		.urlPattern("")
 		.filters(new Field[] {
@@ -44,7 +44,13 @@ public class GetUnderGuaranteeFAReport extends ServiceDescriptorBuilder {
 						.build(),
 		})
 		.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
-				new FieldBuilder().name("sta")
+				new FieldBuilder().name("lof")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("domicile")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("mo")
 						.type(StringType.class)
 						.build(),
 				new FieldBuilder().name("id")
@@ -56,23 +62,32 @@ public class GetUnderGuaranteeFAReport extends ServiceDescriptorBuilder {
 				new FieldBuilder().name("pos")
 						.type(StringType.class)
 						.build(),
-				new FieldBuilder().name("domicile")
+				new FieldBuilder().name("key")
 						.type(StringType.class)
 						.build(),
-				new FieldBuilder().name("arrival")
-						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-						.build(),
-				new FieldBuilder().name("dt2")
+				new FieldBuilder().name("type")
 						.type(StringType.class)
 						.build(),
 				new FieldBuilder().name("duty")
 						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
 						.build(),
-				new FieldBuilder().name("lofGar")
+				new FieldBuilder().name("station")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("dhdInd")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("flt")
+						.type(StringType.class)
+						.build(),
+				new FieldBuilder().name("daysCount")
+						.type(Int32.class)
+						.build(),
+				new FieldBuilder().name("ftcr")
 						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
 						.build(),
-				new FieldBuilder().name("idGar")
-						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+				new FieldBuilder().name("remarks")
+						.type(StringType.class)
 						.build(),
 		}).build()).build());
 	}
