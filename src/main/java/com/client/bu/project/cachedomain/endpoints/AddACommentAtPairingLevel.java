@@ -23,7 +23,7 @@ public class AddACommentAtPairingLevel extends ServiceDescriptorBuilder  {
         this.name("addACommentAtPairingLevel");
         this.description("");
         this.urlPattern("");
-        this.parameters(
+        this.filters(
                 new Field[]{
                     new FieldBuilder().name("paringId")
                     .type(StringType.class).build(),

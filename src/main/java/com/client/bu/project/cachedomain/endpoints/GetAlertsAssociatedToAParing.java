@@ -26,7 +26,7 @@ public class GetAlertsAssociatedToAParing extends ServiceDescriptorBuilder {
         this.name("getAlertsAssociatedToAParing");
         this.description("");
         this.urlPattern("");
-        this.parameters(new Field[]{
+        this.filters(new Field[]{
             CrewSchedulingUtils.getTimeframeField(),
             new FieldBuilder().name("pairingId")
             .type(StringType.class).build()

@@ -26,7 +26,7 @@ public class GetAlertsCrewView extends ServiceDescriptorBuilder {
         this.name("getAlertsCrewView");
         this.description("");
         this.urlPattern("");
-        this.parameters(new Field[]{
+        this.filters(new Field[]{
             CrewSchedulingUtils.getTimeframeField(),
             new FieldBuilder()
             .name("sortType")

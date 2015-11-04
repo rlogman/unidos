@@ -5,10 +5,8 @@
  */
 package com.client.bu.project.cachedomain.endpoints;
 
-import com.client.bu.project.cachedomain.servicedescriptor.DateTimeType;
 import com.client.bu.project.cachedomain.servicedescriptor.Field;
 import com.client.bu.project.cachedomain.servicedescriptor.FieldBuilder;
-import com.client.bu.project.cachedomain.servicedescriptor.Int32;
 import com.client.bu.project.cachedomain.servicedescriptor.ObjectBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.ServiceDescriptorBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.StringType;

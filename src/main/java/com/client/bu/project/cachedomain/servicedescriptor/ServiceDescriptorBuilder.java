@@ -70,6 +70,16 @@ public class ServiceDescriptorBuilder
 		return this;
 	}
 
+	public ServiceDescriptorBuilder filters(List<Field> filters) {
+		builtObject.setFilters(filters);
+		return this;
+	}
+
+	public ServiceDescriptorBuilder filters(Field[] filters) {
+		builtObject.setFilters(Arrays.asList(filters));
+		return this;
+	}
+
 	public ServiceDescriptorBuilder parameters(List<Field> parameters) {
 		builtObject.setParameters(parameters);
 		return this;

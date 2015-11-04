@@ -248,10 +248,7 @@ public class CrewSchedulingUtils {
                     new FieldBuilder().name("lastName")
                     .type(StringType.class)
                     .build(),
-                    new FieldBuilder().name("class")
-                    .type(StringType.class)
-                    .possibleValues(new String[]{"Pilot", "FA"})
-                    .build(),
+                    getCrewTypeField(),
                     new FieldBuilder().name("laborUnionCode")
                     .type(StringType.class)
                     .possibleValues(new String[]{"sUA", "sCO"})
@@ -264,6 +261,13 @@ public class CrewSchedulingUtils {
                     .build(),}).build();
 
     }
+
+	public static Field getCrewTypeField() {
+		return new FieldBuilder().name("crewType")
+		.type(StringType.class)
+		.possibleValues(new String[]{"Pilot", "FA"})
+		.build();
+	}
     
     /**
      * 

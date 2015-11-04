@@ -22,7 +22,7 @@ public class GetFleetSelection extends ServiceDescriptorBuilder {
         this.name("getFleetSelection");
         this.description("");
         this.urlPattern("");
-        this.parameters(new Field[]{
+        this.filters(new Field[]{
             new FieldBuilder().name("profile")
             .type(StringType.class).build(),
             new FieldBuilder().name("tbdOther")

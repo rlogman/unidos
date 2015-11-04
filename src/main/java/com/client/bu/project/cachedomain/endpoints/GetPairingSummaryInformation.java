@@ -25,7 +25,7 @@ public class GetPairingSummaryInformation extends ServiceDescriptorBuilder {
         this.name("getPairingSummaryInformation");
         this.description("");
         this.urlPattern("");
-        this.parameters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray());
+        this.filters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray());
         this.returnType(new ObjectBuilder().fields(new Field[]{
             new FieldBuilder().name("affectedPairings")
             .type(CrewSchedulingUtils.getPairingCollectionType())

@@ -78,7 +78,7 @@ public class GenerateJsonSchema {
 				.name("getBaseSelection")
 				.description("")
 				.urlPattern("")
-				.parameters(
+				.filters(
 						new Field[] {
 								new FieldBuilder().name("profile")
 										.type(StringType.class).build(),
@@ -89,7 +89,7 @@ public class GenerateJsonSchema {
 				.name("getFleetSelection")
 				.description("")
 				.urlPattern("")
-				.parameters(
+				.filters(
 						new Field[] {
 								new FieldBuilder().name("profile")
 										.type(StringType.class).build(),
@@ -101,7 +101,7 @@ public class GenerateJsonSchema {
 						.name("changeBaseSelection")
 						.description("")
 						.urlPattern("")
-						.parameters(
+						.filters(
 								new Field[] {
 										new FieldBuilder().name("selection")
 												.type(StringType.class).build(),
@@ -121,7 +121,7 @@ public class GenerateJsonSchema {
 				.name("changeFleetSelection")
 				.description("")
 				.urlPattern("")
-				.parameters(
+				.filters(
 						new Field[] {
 								new FieldBuilder().name("selection")
 										.type(StringType.class).build(),
@@ -141,7 +141,7 @@ public class GenerateJsonSchema {
 				.name("getPairingSummaryInformation")
 				.description("")
 				.urlPattern("")
-				.parameters(getTimeframeAndTypeFieldArray())
+				.filters(getTimeframeAndTypeFieldArray())
 				.returnType(new ObjectBuilder().fields(new Field[] {
 						new FieldBuilder().name("affectedPairings")
 								.type(getPairingCollectionType())
@@ -170,7 +170,7 @@ public class GenerateJsonSchema {
 				.name("getSummaryOfAlertStatus")
 				.description("")
 				.urlPattern("")
-				.parameters(getTimeframeAndTypeFieldArray())
+				.filters(getTimeframeAndTypeFieldArray())
 				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
 						new FieldBuilder()
 								.name("distributionPercentage")
@@ -186,7 +186,7 @@ public class GenerateJsonSchema {
 				.name("getInflghtDelayCodes")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {
+				.filters(new Field[] {
 						new FieldBuilder().name("tbd")
 								.type(StringType.class).build(),
 				})
@@ -265,7 +265,7 @@ public class GenerateJsonSchema {
 				.name("local.getProfileAvailableReports")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {
+				.filters(new Field[] {
 						new FieldBuilder().name("profileId")
 								.type(StringType.class).build(),
 				})
@@ -287,7 +287,7 @@ public class GenerateJsonSchema {
 				.name("local.getAlertManagementDashboard")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {
+				.filters(new Field[] {
 						new FieldBuilder().name("profileId") // TODO double-check this; it seems invalid
 								.type(StringType.class).build(),
 				})
@@ -309,7 +309,7 @@ public class GenerateJsonSchema {
 				.name("getScheduleSummaryInformation")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {// TODO double-check this
+				.filters(new Field[] {// TODO double-check this
 				})
 				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
 								new FieldBuilder().name("date")
@@ -406,7 +406,7 @@ public class GenerateJsonSchema {
 			.name("getAlertsTailView")
 			.description("")
 			.urlPattern("")
-			.parameters(new Field[] {
+			.filters(new Field[] {
 					getTimeframeField(),
 					new FieldBuilder().name("sortType")
 							.possibleValues(new String[] {
@@ -458,7 +458,7 @@ public class GenerateJsonSchema {
 				.name("getAlertsFlightView")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {
+				.filters(new Field[] {
 						getTimeframeField(),
 						new FieldBuilder()
 								.name("sortType")
@@ -512,7 +512,7 @@ public class GenerateJsonSchema {
 				.name("getAlertsCrewView")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {
+				.filters(new Field[] {
 						getTimeframeField(),
 						new FieldBuilder()
 								.name("sortType")
@@ -571,7 +571,7 @@ public class GenerateJsonSchema {
 				.name("getAlertPreviewInformation")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {
+				.filters(new Field[] {
 						new FieldBuilder()
 								.name("alertId")
 								.type(StringType.class)
@@ -644,7 +644,7 @@ public class GenerateJsonSchema {
 				.name("local.getTimezones")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {
+				.filters(new Field[] {
 				})
 				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
 						new FieldBuilder()
@@ -673,7 +673,7 @@ public class GenerateJsonSchema {
 				.name("getFlightInformation")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {
+				.filters(new Field[] {
 						new FieldBuilder()
 						.name("flightNumber")
 						.type(StringType.class)
@@ -804,7 +804,7 @@ public class GenerateJsonSchema {
 				.name("getAlertsAssociatedToAParing")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {
+				.filters(new Field[] {
 						getTimeframeField(),
                                                 new FieldBuilder().name("pairingId")
 										.type(StringType.class).build()
@@ -861,7 +861,7 @@ public class GenerateJsonSchema {
 				.name("getPairingInformation")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {	// TODO validate parameters
+				.filters(new Field[] {	// TODO validate parameters
 				})
 				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
 						new FieldBuilder()
@@ -1091,7 +1091,7 @@ public class GenerateJsonSchema {
 				.name("getMasterScheduleList")
 				.description("")
 				.urlPattern("")
-				.parameters(new Field[] {	// TODO Validate
+				.filters(new Field[] {	// TODO Validate
 				})
 				.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
 						new FieldBuilder()

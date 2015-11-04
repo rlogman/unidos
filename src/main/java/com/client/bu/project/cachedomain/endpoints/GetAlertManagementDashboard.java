@@ -24,7 +24,7 @@ public class GetAlertManagementDashboard extends ServiceDescriptorBuilder {
         this.name("local.getAlertManagementDashboard");
         this.description("");
         this.urlPattern("");
-        this.parameters(new Field[]{
+        this.filters(new Field[]{
             new FieldBuilder().name("profileId") // TODO double-check this; it seems invalid
             .type(StringType.class).build(),});
         this.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[]{ // TODO double-check whole return; it seems invalid
