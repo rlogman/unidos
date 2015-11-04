@@ -29,7 +29,7 @@ public class ChangeBaseSelection extends ServiceDescriptorBuilder {
                     .type(StringType.class).build(),
                     new FieldBuilder().name("type")
                     .type(StringType.class).build(),
-                    new FieldBuilder().name("userid")
+                    new FieldBuilder().name("userId")
                     .type(StringType.class).build()});
 
         this.returnType(

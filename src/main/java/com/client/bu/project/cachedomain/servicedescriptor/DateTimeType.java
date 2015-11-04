@@ -46,6 +46,12 @@ public class DateTimeType extends Primitive {
 		}
 	};
 
+        public static final Type UTC_TIMESTAMP_YEAR = new DateTimeType() {
+		{
+			this.format = "ddyy:MM:yy";
+			this.timeZone = "UTC";
+		}
+	};
 	protected String format;
 	protected String timeZone;
 
