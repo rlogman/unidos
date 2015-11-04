@@ -12,6 +12,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.Int32;
 import com.client.bu.project.cachedomain.servicedescriptor.ObjectBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.ServiceDescriptorBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.StringType;
+import com.client.bu.project.cachedomain.util.CrewSchedulingUtils;
 
 /**
  *
@@ -36,14 +37,14 @@ public class GetSummaryInformation extends ServiceDescriptorBuilder {
             .type(DateTimeType.UTC_TIMESTAMP_YEAR)
             .build(),
             new FieldBuilder().name("pairingAffected")
-            .type(StringType.class) 
+            .type(CrewSchedulingUtils.getPairingType()) 
             .build(),
             new FieldBuilder().name("crewAffected")
-            .type(StringType.class)
+            .type(CrewSchedulingUtils.getCrewMemberType())
             .build(),
             new FieldBuilder()
             .name("flightAffected")
-            .type(StringType.class) 
+            .type(CrewSchedulingUtils.getFlightLegType()) 
             .build(),
             new FieldBuilder()
             .name("alertsDisplayed")

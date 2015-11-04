@@ -44,7 +44,7 @@ public class GetAlertsAssociatedToAParing extends ServiceDescriptorBuilder {
             .type(CrewSchedulingUtils.getPairingCollectionType())
             .build(),
             new FieldBuilder().name("crewAffected")
-            .type(StringType.class)
+            .type(CrewSchedulingUtils.getCrewMemberCollectionType())
             .build(),
             new FieldBuilder()
             .name("numberFlight")

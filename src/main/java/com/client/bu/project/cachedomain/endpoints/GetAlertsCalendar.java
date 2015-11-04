@@ -17,13 +17,13 @@ import com.client.bu.project.cachedomain.util.CrewSchedulingUtils;
  *
  * @author berenice.morales
  */
-public class SeeAlertsCalendar extends ServiceDescriptorBuilder {
+public class GetAlertsCalendar extends ServiceDescriptorBuilder {
 
-    public SeeAlertsCalendar() {
+    public GetAlertsCalendar() {
         this.name("seeAlertsCalendar");
         this.description("");
         this.urlPattern("");
-        this.parameters(new Field[]{
+        this.filters(new Field[]{
             new FieldBuilder().name("month")
             .type(StringType.class).build(),
             new FieldBuilder().name("filter")

@@ -30,7 +30,11 @@ public class AddACommentAtPairingLevel extends ServiceDescriptorBuilder  {
                     new FieldBuilder().name("userId")
                     .type(StringType.class).build(),
                     new FieldBuilder().name("description")
-                    .type(StringType.class).build()});
+                    .type(StringType.class).build(),
+                    new FieldBuilder()
+                    .name("tbdOther")
+                    .type(StringType.class)
+                    .build()});
 
         this.returnType(
                 new ObjectBuilder().fields(

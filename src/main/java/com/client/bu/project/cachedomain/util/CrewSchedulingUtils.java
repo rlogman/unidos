@@ -486,5 +486,6 @@ public class CrewSchedulingUtils {
 		// FIXME provide getMasterScheduleAlertType details
 				}).build();
 	}
+        
 }
 
