@@ -77,7 +77,7 @@ public class GetLineholdersOrReservesList extends ServiceDescriptorBuilder {
 						})
 						.build(),
 		})
-		.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+		.returnType(new ObjectBuilder().fields(new Field[] {
 				new FieldBuilder().name("totalResults")
 						.type(Int32.class)
 						.build(),
@@ -148,9 +148,16 @@ public class GetLineholdersOrReservesList extends ServiceDescriptorBuilder {
 						new FieldBuilder().name("totalReserveCount")
 								.type(Int32.class)
 								.build(),
-						new FieldBuilder().name("inboundReserves").type(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+						new FieldBuilder().name("reserves").type(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
 								new FieldBuilder().name("domicile")
 										.type(getDomicileType())
+										.build(),
+								new FieldBuilder().name("inboundOrAtHome")
+										.type(StringType.class)
+										.possibleValues(new String[] {
+												"inbound",
+												"atHome"
+										})
 										.build(),
 								new FieldBuilder().name("employeeData")
 										.type(new ObjectBuilder().fields(new Field[] {
@@ -196,6 +203,6 @@ public class GetLineholdersOrReservesList extends ServiceDescriptorBuilder {
 								.build(),
 						}).build())
 						.build(),
-				}).build()).build());
+				}).build());
 	}
 }
