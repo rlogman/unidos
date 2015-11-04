@@ -25,7 +25,7 @@ public class GetHistoricalDataOfChangesOnThePairing  extends ServiceDescriptorBu
         this.name("getHistoricalDataOfChangesOnThePairing");
         this.description("");
         this.urlPattern("");
-        this.parameters(new Field[]{
+        this.filters(new Field[]{
             new FieldBuilder().name("paringId")
             .type(StringType.class).build(),});
         this.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[]{

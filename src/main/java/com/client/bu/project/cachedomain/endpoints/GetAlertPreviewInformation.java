@@ -26,7 +26,7 @@ public class GetAlertPreviewInformation extends ServiceDescriptorBuilder {
         this.name("getAlertPreviewInformation");
         this.description("");
         this.urlPattern("");
-        this.parameters(new Field[]{
+        this.filters(new Field[]{
             new FieldBuilder()
             .name("alertId")
             .type(StringType.class)

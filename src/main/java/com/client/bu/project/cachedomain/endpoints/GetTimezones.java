@@ -26,7 +26,7 @@ public class GetTimezones extends ServiceDescriptorBuilder {
         this.name("local.getTimezones");
         this.description("");
         this.urlPattern("");
-        this.parameters(new Field[]{});
+        this.filters(new Field[]{});
         this.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[]{
             new FieldBuilder()
             .name("name")

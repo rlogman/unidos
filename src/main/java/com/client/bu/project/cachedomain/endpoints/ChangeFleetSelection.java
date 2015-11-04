@@ -23,7 +23,7 @@ public class ChangeFleetSelection extends ServiceDescriptorBuilder {
         this.name("changeFleetSelection");
         this.description("");
         this.urlPattern("");
-        this.parameters(
+        this.filters(
                 new Field[]{
                     new FieldBuilder().name("selection")
                     .type(StringType.class).build(),

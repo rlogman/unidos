@@ -25,7 +25,7 @@ public class GetScheduleSummaryInformation extends ServiceDescriptorBuilder {
         this.name("getScheduleSummaryInformation");
         this.description("");
         this.urlPattern("");
-        this.parameters(new Field[]{// TODO double-check this
+        this.filters(new Field[]{// TODO double-check this
         });
         this.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[]{
             new FieldBuilder().name("date")

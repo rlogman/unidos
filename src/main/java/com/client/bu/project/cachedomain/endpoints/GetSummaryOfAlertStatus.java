@@ -26,7 +26,7 @@ public class GetSummaryOfAlertStatus extends ServiceDescriptorBuilder {
         this.name("getSummaryOfAlertStatus");
         this.description("");
         this.urlPattern("");
-        this.parameters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray());
+        this.filters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray());
         this.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[]{
             new FieldBuilder()
             .name("distributionPercentage")

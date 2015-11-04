@@ -26,7 +26,7 @@ public class GetAlertsTailView extends ServiceDescriptorBuilder {
         this.name("getAlertsTailView");
         this.description("");
         this.urlPattern("");
-        this.parameters(new Field[]{
+        this.filters(new Field[]{
             CrewSchedulingUtils.getTimeframeField(),
             new FieldBuilder().name("sortType")
             .possibleValues(new String[]{

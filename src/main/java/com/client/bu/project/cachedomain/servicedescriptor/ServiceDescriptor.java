@@ -12,6 +12,7 @@ public class ServiceDescriptor {
 	private Set<AvailabilityLevel> availableTo;
 	private String description;
 	private Set<Protocol> protocols;
+	private List<Field> filters;
 	private List<Field> parameters;
 	private Type returnType;
 
@@ -28,13 +29,15 @@ public class ServiceDescriptor {
 	}
 
 	public ServiceDescriptor(String name, String description,
-			String urlPattern, List<Field> parameters, Type returnType,
-			Maturity maturity, Set<AvailabilityLevel> availableTo,
+			String urlPattern, List<Field> filters, List<Field> parameters,
+			Type returnType, Maturity maturity,
+			Set<AvailabilityLevel> availableTo,
 			Set<Protocol> protocols) {
 		super();
 		this.name = name;
 		this.description = description;
 		this.urlPattern = urlPattern;
+		this.filters = filters;
 		this.parameters = parameters;
 		this.returnType = returnType;
 		this.maturity = maturity;
@@ -54,10 +57,10 @@ public class ServiceDescriptor {
 	}
 
 	public ServiceDescriptor(String name, String description,
-			String urlPattern, Field[] parameters, Type returnType,
+			String urlPattern, Field[] filters, Field[] parameters, Type returnType,
 			Maturity maturity, AvailabilityLevel[] availableTo,
 			Protocol[] protocols) {
-		this(name, description, urlPattern, Arrays.asList(parameters),
+		this(name, description, urlPattern, Arrays.asList(filters), Arrays.asList(parameters),
 				returnType, maturity, toSet(availableTo), toSet(protocols));
 	}
 
@@ -107,6 +110,14 @@ public class ServiceDescriptor {
 
 	public void setProtocols(Set<Protocol> protocols) {
 		this.protocols = protocols;
+	}
+
+	public List<Field> getFilters() {
+		return filters;
+	}
+
+	public void setFilters(List<Field> filters) {
+		this.filters = filters;
 	}
 
 	public List<Field> getParameters() {

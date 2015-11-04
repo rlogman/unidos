@@ -30,7 +30,7 @@ public class GetMasterScheduleList extends ServiceDescriptorBuilder {
 		this.name("getMasterScheduleList")
 		.description("")
 		.urlPattern("")
-		.parameters(new Field[] {	// TODO Validate
+		.filters(new Field[] {	// TODO Validate
 				new FieldBuilder().name("crewMemberId")
 						.type(StringType.class)
 						.build(),
