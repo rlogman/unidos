@@ -432,4 +432,55 @@ public class CrewSchedulingUtils {
     public static CollectionType getWatchers() {
         return new CollectionBuilder().itemType(getPairingType()).build();
     }
+
+	public static ObjectType getMasterScheduleFlightSegmentType() {
+		return new ObjectBuilder().fields(new Field[] {
+				new FieldBuilder().name("pair")
+						.type(new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
+						.build(),
+				new FieldBuilder().name("scheduledStartTimestamp")
+						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+						.build(),
+				new FieldBuilder().name("scheduledEndTimestamp")
+						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+						.build(),
+				new FieldBuilder().name("estimatedStartTimestamp")
+						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+						.build(),
+				new FieldBuilder().name("estimatedEndTimestamp")
+						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+						.build(),
+				new FieldBuilder().name("actualStartTimestamp")
+						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+						.build(),
+				new FieldBuilder().name("actualEndTimestamp")
+						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+						.build(),
+				new FieldBuilder().name("flightSegments")
+						.type(new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
+						.build(),
+				new FieldBuilder().name("flightSegments")
+						.type(new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
+						.build(),
+				new FieldBuilder().name("flightSegments")
+						.type(new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
+						.build(),
+				new FieldBuilder().name("flightSegments")
+						.type(new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
+						.build(),
+		}).build();
+	}
+
+	public static ObjectType getMasterScheduleNonFlyingSegmentType() {
+		return new ObjectBuilder().fields(new Field[] {
+		// FIXME provide getMasterScheduleNonFlyingSegmentType details
+				}).build();
+	}
+
+	public static ObjectType getMasterScheduleAlertType() {
+		return new ObjectBuilder().fields(new Field[] {
+		// FIXME provide getMasterScheduleAlertType details
+				}).build();
+	}
 }
+
