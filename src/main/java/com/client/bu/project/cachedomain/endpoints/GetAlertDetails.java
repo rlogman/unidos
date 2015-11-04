@@ -49,7 +49,7 @@ public class GetAlertDetails extends ServiceDescriptorBuilder{
             new FieldBuilder()
             .name("assignedTo")
             .type(StringType.class)
-            .build(),}).build()).build();
+            .build()}).build()).build();
     }
             
 }
