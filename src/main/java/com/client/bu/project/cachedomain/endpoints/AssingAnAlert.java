@@ -16,10 +16,10 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class AssingAnAlert extends ServiceDescriptorBuilder {
 
   public AssingAnAlert() {
-    name("assingAnAlert")
+    name("local.assingAnAlert")
     .description("")
     .urlPattern("")
-    .parameters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build(),
+    .filters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build(),
         new FieldBuilder().name("userId").type(StringType.class).build()})
     .returnType(StringType.class).build();
   }

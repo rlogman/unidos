@@ -19,10 +19,10 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class ChangeBaseSelection extends ServiceDescriptorBuilder {
 
   public ChangeBaseSelection() {
-    name("changeBaseSelection")
+    name("local.changeBaseSelection")
     .description("")
     .urlPattern("")
-    .parameters(new Field[] {
+    .filters(new Field[] {
         new FieldBuilder().name("selection").type(StringType.class).build(),
         new FieldBuilder().name("type").type(StringType.class).build(),
         new FieldBuilder().name("userId").type(StringType.class).build()})

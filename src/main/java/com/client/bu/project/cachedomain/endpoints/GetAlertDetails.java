@@ -6,6 +6,7 @@ package com.client.bu.project.cachedomain.endpoints;
 
 import com.client.bu.project.cachedomain.servicedescriptor.Field;
 import com.client.bu.project.cachedomain.servicedescriptor.FieldBuilder;
+import com.client.bu.project.cachedomain.servicedescriptor.Int32;
 import com.client.bu.project.cachedomain.servicedescriptor.ObjectBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.ServiceDescriptorBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.StringType;
@@ -23,7 +24,7 @@ public class GetAlertDetails extends ServiceDescriptorBuilder {
     name("getAlertDetail")
     .description("")
     .urlPattern("")
-    .parameters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()})
+    .filters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()})
     .returnType(new ObjectBuilder().fields(new Field[] {
         new FieldBuilder().name("pairing")
             .type(CrewSchedulingUtils.getPairingCollectionType()).build(),
@@ -31,7 +32,7 @@ public class GetAlertDetails extends ServiceDescriptorBuilder {
             .build(),
         new FieldBuilder().name("crew")
             .type(CrewSchedulingUtils.getCrewMemberCollectionType()).build(),
-        new FieldBuilder().name("watchers").type(CrewSchedulingUtils.getWatchers())
+        new FieldBuilder().name("watchers").type(Int32.class)
             .build(),
         new FieldBuilder().name("assignedTo").type(StringType.class).build()}).build())
     .build();

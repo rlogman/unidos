@@ -19,7 +19,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class ChangeFleetSelection extends ServiceDescriptorBuilder {
 
   public ChangeFleetSelection() {
-    name("changeFleetSelection")
+    name("local.changeFleetSelection")
     .description("")
     .urlPattern("")
     .filters(new Field[] {new FieldBuilder().name("selection").type(StringType.class).build(),

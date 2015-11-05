@@ -306,8 +306,8 @@ public class CrewSchedulingUtils {
    * 
    * @return
    */
-  public static CollectionType getWatchers() {
-    return new CollectionBuilder().itemType(getPairingType()).build();
+  public static Type getWatchers() {
+    return new Int32();
   }
 
   public static ObjectType getMasterScheduleFlightSegmentType() {
