@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties. To change this
+ * template file, choose Tools | Templates and open the template in the editor.
  */
 package com.client.bu.project;
 
@@ -22,21 +21,21 @@ import org.reflections.Reflections;
  */
 public class GenerateJsonEndpoints {
 
-    public static void main(String[] args) {
-        try {
-            List<ServiceDescriptor> endpoints = new ArrayList<ServiceDescriptor>();
-            Reflections reflections = new Reflections("com.client.bu.project.cachedomain.endpoints");
-            Set<Class<? extends ServiceDescriptorBuilder>> allClasses = reflections.getSubTypesOf(ServiceDescriptorBuilder.class);
-            
-            for (Class<? extends ServiceDescriptorBuilder> allClasse : allClasses) {
-                endpoints.add( allClasse.newInstance().build());
-            }
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-            System.out.println(mapper.writerWithDefaultPrettyPrinter()
-				.writeValueAsString(endpoints));
-        } catch (Exception e) {
-            e.printStackTrace();
-        } 
+  public static void main(String[] args) {
+    try {
+      List<ServiceDescriptor> endpoints = new ArrayList<ServiceDescriptor>();
+      Reflections reflections = new Reflections("com.client.bu.project.cachedomain.endpoints");
+      Set<Class<? extends ServiceDescriptorBuilder>> allClasses =
+          reflections.getSubTypesOf(ServiceDescriptorBuilder.class);
+
+      for (Class<? extends ServiceDescriptorBuilder> allClasse : allClasses) {
+        endpoints.add(allClasse.newInstance().build());
+      }
+      ObjectMapper mapper = new ObjectMapper();
+      mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+      System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(endpoints));
+    } catch (Exception e) {
+      e.printStackTrace();
     }
+  }
 }

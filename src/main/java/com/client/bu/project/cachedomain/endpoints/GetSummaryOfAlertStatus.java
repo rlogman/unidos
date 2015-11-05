@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties. To change this
+ * template file, choose Tools | Templates and open the template in the editor.
  */
 package com.client.bu.project.cachedomain.endpoints;
 
@@ -22,19 +21,16 @@ import com.client.bu.project.cachedomain.util.CrewSchedulingUtils;
  */
 public class GetSummaryOfAlertStatus extends ServiceDescriptorBuilder {
 
-    public GetSummaryOfAlertStatus() {
-        this.name("getSummaryOfAlertStatus");
-        this.description("");
-        this.urlPattern("");
-        this.filters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray());
-        this.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[]{
-            new FieldBuilder()
-            .name("distributionPercentage")
-            .type(DoubleType.class)
-            .build(),
-            new FieldBuilder()
-            .name("tbdAdditionalData")
-            .type(StringType.class)
-            .build(),}).build()).build());
-    }
+  public GetSummaryOfAlertStatus() {
+    this.name("getSummaryOfAlertStatus");
+    this.description("");
+    this.urlPattern("");
+    this.filters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray());
+    this.returnType(new CollectionBuilder().itemType(
+        new ObjectBuilder().fields(
+            new Field[] {
+                new FieldBuilder().name("distributionPercentage").type(DoubleType.class).build(),
+                new FieldBuilder().name("tbdAdditionalData").type(StringType.class).build(),})
+            .build()).build());
+  }
 }

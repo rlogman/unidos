@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties. To change this
+ * template file, choose Tools | Templates and open the template in the editor.
  */
 package com.client.bu.project.cachedomain.endpoints;
 
@@ -21,26 +20,19 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
  */
 public class GetCommentsAssociatedToAPairing extends ServiceDescriptorBuilder {
 
-    public GetCommentsAssociatedToAPairing() {
-        this.name("getCommentsAssociatedToAPairing");
-        this.description("");
-        this.urlPattern("");
-        this.filters(new Field[]{
-            new FieldBuilder().name("paringId")
-            .type(StringType.class).build(),});
-        this.returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[]{
-            new FieldBuilder()
-            .name("commentId")
-            .type(StringType.class)
-            .build(),
-            new FieldBuilder().name("description")
-            .type(StringType.class)
-            .build(),
-            new FieldBuilder().name("who")
-            .type(StringType.class)// TODO? client list?
-            .build(),
-            new FieldBuilder().name("lastUpdate")
-            .type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-            .build(),}).build()).build());
-    }
+  public GetCommentsAssociatedToAPairing() {
+    this.name("getCommentsAssociatedToAPairing");
+    this.description("");
+    this.urlPattern("");
+    this.filters(new Field[] {new FieldBuilder().name("paringId").type(StringType.class).build(),});
+    this.returnType(new CollectionBuilder().itemType(
+        new ObjectBuilder().fields(
+            new Field[] {
+                new FieldBuilder().name("commentId").type(StringType.class).build(),
+                new FieldBuilder().name("description").type(StringType.class).build(),
+                new FieldBuilder().name("who").type(StringType.class)// TODO? client list?
+                    .build(),
+                new FieldBuilder().name("lastUpdate").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+                    .build(),}).build()).build());
+  }
 }
