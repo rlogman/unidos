@@ -314,9 +314,8 @@ public class CrewSchedulingUtils {
     return new ObjectBuilder().fields(
         new Field[] {
             new FieldBuilder()
-                .name("pair")
-                .type(
-                    new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
+                .name("flightNumber")
+                .type(StringType.class)
                 .build(),
             new FieldBuilder().name("scheduledStartTimestamp")
                 .type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
@@ -330,38 +329,45 @@ public class CrewSchedulingUtils {
                 .type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
             new FieldBuilder().name("actualEndTimestamp").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
                 .build(),
-            new FieldBuilder()
-                .name("flightSegments")
-                .type(
-                    new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
-                .build(),
-            new FieldBuilder()
-                .name("flightSegments")
-                .type(
-                    new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
-                .build(),
-            new FieldBuilder()
-                .name("flightSegments")
-                .type(
-                    new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
-                .build(),
-            new FieldBuilder()
-                .name("flightSegments")
-                .type(
-                    new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
-                .build(),}).build();
+        })
+        .build();
   }
 
   public static ObjectType getMasterScheduleNonFlyingSegmentType() {
-    return new ObjectBuilder().fields(new Field[] {
-    // FIXME provide getMasterScheduleNonFlyingSegmentType details
-        }).build();
+    return new ObjectBuilder().fields(
+        new Field[] {
+            new FieldBuilder().name("scheduledStartTimestamp")
+                .type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+            new FieldBuilder().name("scheduledEndTimestamp")
+                .type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+            new FieldBuilder().name("estimatedStartTimestamp")
+                .type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+            new FieldBuilder().name("estimatedEndTimestamp")
+                .type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+            new FieldBuilder().name("actualStartTimestamp")
+                .type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+            new FieldBuilder().name("actualEndTimestamp").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+                .build(),
+        })
+        .build();
   }
 
-  public static ObjectType getMasterScheduleAlertType() {
+  public static CollectionType getAlertDetailsCollectionType() {
+    return new CollectionBuilder().itemType(getAlertDetailsType()).build();
+  }
+
+  public static ObjectType getAlertDetailsType() {
     return new ObjectBuilder().fields(new Field[] {
-    // FIXME provide getMasterScheduleAlertType details
-        }).build();
+        new FieldBuilder().name("severity").type(StringType.class).build(),
+        new FieldBuilder().name("lastUpdate")
+            .type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+        new FieldBuilder().name("pairing")
+            .type(getPairingCollectionType()).build(),
+        new FieldBuilder().name("flight")
+            .type(getPairingCollectionType()).build(),
+        new FieldBuilder().name("crew")
+            .type(getCrewMemberCollectionType()).build(),})
+    .build();
   }
 
 }

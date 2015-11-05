@@ -4,10 +4,7 @@
  */
 package com.client.bu.project.cachedomain.endpoints;
 
-import static com.client.bu.project.cachedomain.util.CrewSchedulingUtils.getDomicileType;
-import static com.client.bu.project.cachedomain.util.CrewSchedulingUtils.getMasterScheduleAlertType;
-import static com.client.bu.project.cachedomain.util.CrewSchedulingUtils.getMasterScheduleFlightSegmentType;
-import static com.client.bu.project.cachedomain.util.CrewSchedulingUtils.getMasterScheduleNonFlyingSegmentType;
+import static com.client.bu.project.cachedomain.util.CrewSchedulingUtils.*;
 
 import com.client.bu.project.cachedomain.servicedescriptor.CollectionBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.DateTimeType;
@@ -98,7 +95,7 @@ public class GetMasterScheduleList extends ServiceDescriptorBuilder {
                     .type(DateTimeType.UTC_MONTH).build(),
                 new FieldBuilder()
                     .name("flightSegments")
-                    .type(new CollectionBuilder().itemType(getMasterScheduleFlightSegmentType()).build())
+                    .type(new CollectionBuilder().itemType(getAlertDetailsType()).build())
                     .build(),
                 new FieldBuilder()
                     .name("nonFlyingSegments")
@@ -106,11 +103,11 @@ public class GetMasterScheduleList extends ServiceDescriptorBuilder {
                     .build(),
                 new FieldBuilder()
                     .name("flyingAlerts")
-                    .type(new CollectionBuilder().itemType(getMasterScheduleAlertType()).build())
+                    .type(new CollectionBuilder().itemType(getAlertDetailsType()).build())
                     .build(),
                 new FieldBuilder()
                     .name("nonFlyingAlerts")
-                    .type(new CollectionBuilder().itemType(getMasterScheduleAlertType()).build())
+                    .type(new CollectionBuilder().itemType(getAlertDetailsType()).build())
                     .build(),
             }).build()).build()).build(),
         new FieldBuilder().name("lastUpdate")
