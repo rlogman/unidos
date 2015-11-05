@@ -19,14 +19,15 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class ChangeFleetSelection extends ServiceDescriptorBuilder {
 
   public ChangeFleetSelection() {
-    this.name("changeFleetSelection");
-    this.description("");
-    this.urlPattern("");
-    this.filters(new Field[] {new FieldBuilder().name("selection").type(StringType.class).build(),
+    name("changeFleetSelection")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {new FieldBuilder().name("selection").type(StringType.class).build(),
         new FieldBuilder().name("type").type(StringType.class).build(),
-        new FieldBuilder().name("userId").type(StringType.class).build()});
-    this.returnType(new ObjectBuilder().fields(
-        new Field[] {new FieldBuilder().name("tbdOther").type(StringType.class).build()}).build());
+        new FieldBuilder().name("userId").type(StringType.class).build()})
+    .returnType(new ObjectBuilder().fields(new Field[] {
+        new FieldBuilder().name("tbdOther").type(StringType.class).build()
+    }).build());
   }
 
 }

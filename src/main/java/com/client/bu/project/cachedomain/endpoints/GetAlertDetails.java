@@ -20,24 +20,21 @@ import com.client.bu.project.cachedomain.util.CrewSchedulingUtils;
 public class GetAlertDetails extends ServiceDescriptorBuilder {
 
   public GetAlertDetails() {
-    this.name("getAlertDetail");
-    this.description("");
-    this.urlPattern("");
-    this.parameters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()});
-    this.returnType(
-        new ObjectBuilder()
-            .fields(
-                new Field[] {
-                    new FieldBuilder().name("pairing")
-                        .type(CrewSchedulingUtils.getPairingCollectionType()).build(),
-                    new FieldBuilder().name("flight").type(CrewSchedulingUtils.getFlightLegType())
-                        .build(),
-                    new FieldBuilder().name("crew")
-                        .type(CrewSchedulingUtils.getCrewMemberCollectionType()).build(),
-                    new FieldBuilder().name("watchers").type(CrewSchedulingUtils.getWatchers())
-                        .build(),
-                    new FieldBuilder().name("assignedTo").type(StringType.class).build()}).build())
-        .build();
+    name("getAlertDetail")
+    .description("")
+    .urlPattern("")
+    .parameters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()})
+    .returnType(new ObjectBuilder().fields(new Field[] {
+        new FieldBuilder().name("pairing")
+            .type(CrewSchedulingUtils.getPairingCollectionType()).build(),
+        new FieldBuilder().name("flight").type(CrewSchedulingUtils.getFlightLegType())
+            .build(),
+        new FieldBuilder().name("crew")
+            .type(CrewSchedulingUtils.getCrewMemberCollectionType()).build(),
+        new FieldBuilder().name("watchers").type(CrewSchedulingUtils.getWatchers())
+            .build(),
+        new FieldBuilder().name("assignedTo").type(StringType.class).build()}).build())
+    .build();
   }
 
 }

@@ -22,34 +22,27 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetUnderGuaranteeFAReport extends ServiceDescriptorBuilder {
 
   public GetUnderGuaranteeFAReport() {
-    this.name("getUnderGuaranteeFAReport")
-        .description("")
-        .urlPattern("")
-        .filters(
-            new Field[] {
-                new FieldBuilder().name("crewType").type(StringType.class)
-                    .possibleValues(new String[] {"domestic", "international"}).build(),
-                new FieldBuilder().name("fromDateTime").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-                    .build(),
-                new FieldBuilder().name("toDateTime").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-                    .build(), new FieldBuilder().name("domicile").type(StringType.class).build(),})
-        .returnType(
-            new CollectionBuilder().itemType(
-                new ObjectBuilder().fields(
-                    new Field[] {
-                        new FieldBuilder().name("sta").type(StringType.class).build(),
-                        new FieldBuilder().name("id").type(StringType.class).build(),
-                        new FieldBuilder().name("dt").type(Int32.class).build(),
-                        new FieldBuilder().name("pos").type(StringType.class).build(),
-                        new FieldBuilder().name("domicile").type(StringType.class).build(),
-                        new FieldBuilder().name("arrival").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-                            .build(),
-                        new FieldBuilder().name("dt2").type(StringType.class).build(),
-                        new FieldBuilder().name("duty").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-                            .build(),
-                        new FieldBuilder().name("lofGar").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-                            .build(),
-                        new FieldBuilder().name("idGar").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-                            .build(),}).build()).build());
+    name("getUnderGuaranteeFAReport")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {
+        new FieldBuilder().name("crewType").type(StringType.class)
+            .possibleValues(new String[] {"domestic", "international"}).build(),
+        new FieldBuilder().name("fromDateTime").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+            .build(),
+        new FieldBuilder().name("toDateTime").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+            .build(), new FieldBuilder().name("domicile").type(StringType.class).build(),})
+    .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+        new FieldBuilder().name("sta").type(StringType.class).build(),
+        new FieldBuilder().name("id").type(StringType.class).build(),
+        new FieldBuilder().name("dt").type(Int32.class).build(),
+        new FieldBuilder().name("pos").type(StringType.class).build(),
+        new FieldBuilder().name("domicile").type(StringType.class).build(),
+        new FieldBuilder().name("arrival").type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+        new FieldBuilder().name("dt2").type(StringType.class).build(),
+        new FieldBuilder().name("duty").type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+        new FieldBuilder().name("lofGar").type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+        new FieldBuilder().name("idGar").type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+    }).build()).build());
   }
 }

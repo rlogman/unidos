@@ -22,15 +22,13 @@ import com.client.bu.project.cachedomain.util.CrewSchedulingUtils;
 public class GetSummaryOfAlertStatus extends ServiceDescriptorBuilder {
 
   public GetSummaryOfAlertStatus() {
-    this.name("getSummaryOfAlertStatus");
-    this.description("");
-    this.urlPattern("");
-    this.filters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray());
-    this.returnType(new CollectionBuilder().itemType(
-        new ObjectBuilder().fields(
-            new Field[] {
-                new FieldBuilder().name("distributionPercentage").type(DoubleType.class).build(),
-                new FieldBuilder().name("tbdAdditionalData").type(StringType.class).build(),})
-            .build()).build());
+    name("getSummaryOfAlertStatus")
+    .description("")
+    .urlPattern("")
+    .filters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray())
+    .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+        new FieldBuilder().name("distributionPercentage").type(DoubleType.class).build(),
+        new FieldBuilder().name("tbdAdditionalData").type(StringType.class).build(),})
+    .build()).build());
   }
 }

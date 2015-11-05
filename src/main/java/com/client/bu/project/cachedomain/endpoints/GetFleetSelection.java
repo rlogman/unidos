@@ -18,11 +18,11 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetFleetSelection extends ServiceDescriptorBuilder {
 
   public GetFleetSelection() {
-    this.name("getFleetSelection");
-    this.description("");
-    this.urlPattern("");
-    this.filters(new Field[] {new FieldBuilder().name("profile").type(StringType.class).build(),
-        new FieldBuilder().name("tbdOther").type(StringType.class).build()});
-    this.returnType(new StringType()).build();
+    name("getFleetSelection")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {new FieldBuilder().name("profile").type(StringType.class).build(),
+        new FieldBuilder().name("tbdOther").type(StringType.class).build()})
+    .returnType(new StringType()).build();
   }
 }

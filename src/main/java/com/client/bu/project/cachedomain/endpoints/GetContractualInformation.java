@@ -18,10 +18,10 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetContractualInformation extends ServiceDescriptorBuilder {
 
   public GetContractualInformation() {
-    this.name("getContractualInformation");
-    this.description("");
-    this.urlPattern("");
-    this.parameters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()});
-    this.returnType(StringType.class).build();
+    name("getContractualInformation")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()})
+    .returnType(StringType.class).build();
   }
 }

@@ -17,14 +17,14 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class AddACommentAtAlertLevel extends ServiceDescriptorBuilder {
 
   public AddACommentAtAlertLevel() {
-    this.name("addACommentAtAlertLevel");
-    this.description("");
-    this.urlPattern("");
-    this.parameters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build(),
+    name("addACommentAtAlertLevel")
+    .description("")
+    .urlPattern("")
+    .parameters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build(),
         new FieldBuilder().name("userId").type(StringType.class).build(),
         new FieldBuilder().name("description").type(StringType.class).build(),
-        new FieldBuilder().name("tbdOther").type(StringType.class).build()});
-    this.returnType(new ObjectBuilder().fields(
+        new FieldBuilder().name("tbdOther").type(StringType.class).build()})
+    .returnType(new ObjectBuilder().fields(
         new Field[] {new FieldBuilder().name("tbdOther").type(StringType.class).build()}).build());
   }
 }

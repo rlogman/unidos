@@ -18,12 +18,12 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetBaseSelection extends ServiceDescriptorBuilder {
 
   public GetBaseSelection() {
-    this.name("getBaseSelection");
-    this.description("");
-    this.urlPattern("");
-    this.filters(new Field[] {new FieldBuilder().name("profile").type(StringType.class).build(),
-        new FieldBuilder().name("tbdOther").type(StringType.class).build()});
-    this.returnType(StringType.class).build();
+    name("getBaseSelection")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {new FieldBuilder().name("profile").type(StringType.class).build(),
+        new FieldBuilder().name("tbdOther").type(StringType.class).build()})
+    .returnType(StringType.class).build();
   }
 
 }

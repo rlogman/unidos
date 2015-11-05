@@ -21,18 +21,16 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetCommentsAssociatedToAPairing extends ServiceDescriptorBuilder {
 
   public GetCommentsAssociatedToAPairing() {
-    this.name("getCommentsAssociatedToAPairing");
-    this.description("");
-    this.urlPattern("");
-    this.filters(new Field[] {new FieldBuilder().name("paringId").type(StringType.class).build(),});
-    this.returnType(new CollectionBuilder().itemType(
-        new ObjectBuilder().fields(
-            new Field[] {
-                new FieldBuilder().name("commentId").type(StringType.class).build(),
-                new FieldBuilder().name("description").type(StringType.class).build(),
-                new FieldBuilder().name("who").type(StringType.class)// TODO? client list?
-                    .build(),
-                new FieldBuilder().name("lastUpdate").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-                    .build(),}).build()).build());
+    name("getCommentsAssociatedToAPairing")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {new FieldBuilder().name("paringId").type(StringType.class).build(),})
+    .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+        new FieldBuilder().name("commentId").type(StringType.class).build(),
+        new FieldBuilder().name("description").type(StringType.class).build(),
+        new FieldBuilder().name("who").type(StringType.class)// TODO? client list?
+            .build(),
+        new FieldBuilder().name("lastUpdate").type(DateTimeType.UTC_TIMESTAMP_MINUTES)
+            .build(),}).build()).build());
   }
 }

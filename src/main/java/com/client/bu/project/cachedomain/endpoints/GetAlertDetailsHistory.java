@@ -20,51 +20,40 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetAlertDetailsHistory extends ServiceDescriptorBuilder {
 
   public GetAlertDetailsHistory() {
-    this.name("getAlertDetailHistory");
-    this.description("");
-    this.urlPattern("");
-    this.parameters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()});
-    this.returnType(
-        new ObjectBuilder().fields(
-            new Field[] {
+    name("getAlertDetailHistory")
+    .description("")
+    .urlPattern("")
+    .parameters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()})
+    .returnType(new ObjectBuilder().fields(new Field[] {
                 new FieldBuilder()
                     .name("commentsAtPairingLevel")
-                    .type(
-                        new CollectionBuilder().itemType(
-                            new ObjectBuilder().fields(
-                                new Field[] {
-                                    new FieldBuilder().name("newComment").type(StringType.class)
-                                        .build(),
-                                    new FieldBuilder().name("expandComment").type(StringType.class)
-                                        .build(),
-                                    new FieldBuilder().name("canClickToOpenParingView")
-                                        .type(StringType.class).build(),}).build()).build())
+                    .type(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+                        new FieldBuilder().name("newComment").type(StringType.class)
+                            .build(),
+                        new FieldBuilder().name("expandComment").type(StringType.class)
+                            .build(),
+                        new FieldBuilder().name("canClickToOpenParingView")
+                            .type(StringType.class).build(),}).build()).build())
                     .build(),
                 new FieldBuilder()
                     .name("commentsAtAlertLevel")
-                    .type(
-                        new CollectionBuilder().itemType(
-                            new ObjectBuilder().fields(
-                                new Field[] {
-                                    new FieldBuilder().name("newComment").type(StringType.class)
-                                        .build(),
-                                    new FieldBuilder().name("expandComment").type(StringType.class)
-                                        .build(),}).build()).build()).build(),
+                    .type(new CollectionBuilder().itemType(new ObjectBuilder().fields( new Field[] {
+                        new FieldBuilder().name("newComment").type(StringType.class)
+                            .build(),
+                        new FieldBuilder().name("expandComment").type(StringType.class)
+                            .build(),}).build()).build()).build(),
                 new FieldBuilder().name("AlertAssignment").type(StringType.class).build(),
                 new FieldBuilder().name("newWatchers").type(StringType.class).build(),
                 new FieldBuilder()
                     .name("flightUpdate")
-                    .type(
-                        new CollectionBuilder().itemType(
-                            new ObjectBuilder().fields(
-                                new Field[] {
-                                    new FieldBuilder().name("changeStatus").type(StringType.class)
-                                        .build(),
-                                    new FieldBuilder().name("changeOnDepartureTime")
-                                        .type(StringType.class).build(),
-                                    new FieldBuilder().name("changeOnArrivalTime")
-                                        .type(StringType.class).build(),
-                                    new FieldBuilder().name("tbdOther").type(StringType.class)
-                                        .build(),}).build()).build()).build(),}).build()).build();
+                    .type(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+                        new FieldBuilder().name("changeStatus").type(StringType.class)
+                            .build(),
+                        new FieldBuilder().name("changeOnDepartureTime")
+                            .type(StringType.class).build(),
+                        new FieldBuilder().name("changeOnArrivalTime")
+                            .type(StringType.class).build(),
+                        new FieldBuilder().name("tbdOther").type(StringType.class)
+                            .build(),}).build()).build()).build(),}).build()).build();
   }
 }

@@ -16,10 +16,10 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetLegalityInformation extends ServiceDescriptorBuilder {
 
   public GetLegalityInformation() {
-    this.name("getLegalityInformation");
-    this.description("");
-    this.urlPattern("");
-    this.parameters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()});
-    this.returnType(StringType.class).build();
+    name("getLegalityInformation")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()})
+    .returnType(StringType.class).build();
   }
 }

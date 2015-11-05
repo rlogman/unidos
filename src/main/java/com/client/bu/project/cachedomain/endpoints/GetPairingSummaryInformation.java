@@ -21,11 +21,11 @@ import com.client.bu.project.cachedomain.util.CrewSchedulingUtils;
 public class GetPairingSummaryInformation extends ServiceDescriptorBuilder {
 
   public GetPairingSummaryInformation() {
-    this.name("getPairingSummaryInformation");
-    this.description("");
-    this.urlPattern("");
-    this.filters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray());
-    this.returnType(
+    name("getPairingSummaryInformation")
+    .description("")
+    .urlPattern("")
+    .filters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray())
+    .returnType(
         new ObjectBuilder().fields(
             new Field[] {
                 new FieldBuilder().name("affectedPairings")

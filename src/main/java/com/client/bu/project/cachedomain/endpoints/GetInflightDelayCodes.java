@@ -20,23 +20,20 @@ import com.client.bu.project.cachedomain.util.CrewSchedulingUtils;
 public class GetInflightDelayCodes extends ServiceDescriptorBuilder {
 
   public GetInflightDelayCodes() {
-    this.name("getInflightDelayCodes");
-    this.description("");
-    this.urlPattern("");
-    this.filters(new Field[] {new FieldBuilder().name("tbd").type(StringType.class).build(),});
-    this.returnType(
-        new CollectionBuilder().itemType(
-            new ObjectBuilder().fields(
-                new Field[] {
-                    new FieldBuilder().name("flightLegId").type(StringType.class).build(),
-                    new FieldBuilder().name("flightNumber").type(StringType.class).build(),
-                    new FieldBuilder().name("fromAirport")
-                        .type(CrewSchedulingUtils.getAirportType()).build(),
-                    new FieldBuilder().name("toAirport").type(CrewSchedulingUtils.getAirportType())
-                        .build(),
-                    new FieldBuilder().name("delayInMinutes").type(Int32.class).build(),
-                    new FieldBuilder().name("rsn").type(StringType.class).build(),
-                    new FieldBuilder().name("tbd").type(StringType.class).build(),}).build())
-            .build()).build();
+    name("getInflightDelayCodes")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {new FieldBuilder().name("tbd").type(StringType.class).build(),})
+    .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+        new FieldBuilder().name("flightLegId").type(StringType.class).build(),
+        new FieldBuilder().name("flightNumber").type(StringType.class).build(),
+        new FieldBuilder().name("fromAirport")
+            .type(CrewSchedulingUtils.getAirportType()).build(),
+        new FieldBuilder().name("toAirport").type(CrewSchedulingUtils.getAirportType())
+            .build(),
+        new FieldBuilder().name("delayInMinutes").type(Int32.class).build(),
+        new FieldBuilder().name("rsn").type(StringType.class).build(),
+        new FieldBuilder().name("tbd").type(StringType.class).build(),
+     }).build()).build()).build();
   }
 }

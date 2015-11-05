@@ -20,10 +20,10 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetHyperLinks extends ServiceDescriptorBuilder {
 
   public GetHyperLinks() {
-    this.name("local.getHyperLinks");
-    this.description("");
-    this.urlPattern("");
-    this.returnType(
+    name("local.getHyperLinks")
+    .description("")
+    .urlPattern("")
+    .returnType(
         new CollectionBuilder()
             .itemType(
                 new ObjectBuilder().fields(

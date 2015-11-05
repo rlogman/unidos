@@ -21,22 +21,22 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetOutboundDH extends ServiceDescriptorBuilder {
 
   public GetOutboundDH() {
-    this.name("getOutboundDH");
-    this.description("");
-    this.urlPattern("");
-    this.filters(new Field[] {
+    name("getOutboundDH")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {
         new FieldBuilder().name("crewType").type(StringType.class)
             .possibleValues(new String[] {"Domestic", "International"}).build(),
         new FieldBuilder().name("startDate").type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
         new FieldBuilder().name("finalDate").type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
         new FieldBuilder()
             .name("stationList")
-            .type(
-                new CollectionBuilder().itemType(
-                    new ObjectBuilder().fields(
-                        new Field[] {new FieldBuilder().name("stationId").type(StringType.class)
-                            .build()}).build()).build()).build(),});
-    this.returnType(
+            .type(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+                new FieldBuilder().name("stationId").type(StringType.class)
+                    .build()
+             }).build()).build()).build(),
+    })
+    .returnType(
         new ObjectBuilder().fields(
             new Field[] {new FieldBuilder().name("HUR").type(StringType.class).build(),
                 new FieldBuilder().name("ID").type(Int64.class).build(),

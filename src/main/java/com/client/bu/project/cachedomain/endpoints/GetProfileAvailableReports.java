@@ -20,17 +20,14 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetProfileAvailableReports extends ServiceDescriptorBuilder {
 
   public GetProfileAvailableReports() {
-    this.name("local.getProfileAvailableReports");
-    this.description("");
-    this.urlPattern("");
-    this.filters(new Field[] {new FieldBuilder().name("profileId").type(StringType.class).build(),});
-    this.returnType(
-        new CollectionBuilder()
-            .itemType(
-                new ObjectBuilder().fields(
-                    new Field[] {new FieldBuilder().name("name").type(StringType.class).build(),
-                        new FieldBuilder().name("description").type(StringType.class).build(),
-                        new FieldBuilder().name("accessLink").type(StringType.class).build(),})
-                    .build()).build()).build();
+    name("local.getProfileAvailableReports")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {new FieldBuilder().name("profileId").type(StringType.class).build(),})
+    .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+        new FieldBuilder().name("name").type(StringType.class).build(),
+        new FieldBuilder().name("description").type(StringType.class).build(),
+        new FieldBuilder().name("accessLink").type(StringType.class).build(),})
+    .build()).build()).build();
   }
 }

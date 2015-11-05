@@ -19,15 +19,14 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class AddACommentAtPairingLevel extends ServiceDescriptorBuilder {
 
   public AddACommentAtPairingLevel() {
-    this.name("addACommentAtPairingLevel");
-    this.description("");
-    this.urlPattern("");
-    this.filters(new Field[] {new FieldBuilder().name("paringId").type(StringType.class).build(),
+    name("addACommentAtPairingLevel")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {new FieldBuilder().name("paringId").type(StringType.class).build(),
         new FieldBuilder().name("userId").type(StringType.class).build(),
         new FieldBuilder().name("description").type(StringType.class).build(),
-        new FieldBuilder().name("tbdOther").type(StringType.class).build()});
-
-    this.returnType(
+        new FieldBuilder().name("tbdOther").type(StringType.class).build()})
+    .returnType(
         new ObjectBuilder().fields(
             new Field[] {new FieldBuilder().name("tbdOther").type(StringType.class).build()})
             .build()).build();

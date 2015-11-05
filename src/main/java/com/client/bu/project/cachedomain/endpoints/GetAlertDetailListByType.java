@@ -20,31 +20,29 @@ import com.client.bu.project.cachedomain.util.CrewSchedulingUtils;
 public class GetAlertDetailListByType extends ServiceDescriptorBuilder {
 
   public GetAlertDetailListByType() {
-    this.name("getAlertDetailListByType");
-    this.description("");
-    this.urlPattern("");
-    this.parameters(new Field[] {
+    name("getAlertDetailListByType")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {
         new FieldBuilder().name("type").type(StringType.class).build(),
         new FieldBuilder().name("general").type(StringType.class)
             .possibleValues(new String[] {"high", "medium", "low"}).build(),
         CrewSchedulingUtils.getTimeframeField(),
+    })
+    .parameters(new Field[] {
         new FieldBuilder().name("sortType")
             .possibleValues(new String[] {"severity", "lastUpdate", "pairing",})
-            .type(StringType.class).build()});
-    this.returnType(
-        new CollectionBuilder()
-            .itemType(
-                new ObjectBuilder().fields(
-                    new Field[] {
-                        new FieldBuilder().name("severity").type(StringType.class).build(),
-                        new FieldBuilder().name("lastUpdate")
-                            .type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
-                        new FieldBuilder().name("pairing")
-                            .type(CrewSchedulingUtils.getPairingCollectionType()).build(),
-                        new FieldBuilder().name("flight")
-                            .type(CrewSchedulingUtils.getPairingCollectionType()).build(),
-                        new FieldBuilder().name("crew")
-                            .type(CrewSchedulingUtils.getCrewMemberCollectionType()).build(),})
-                    .build()).build()).build();
+            .type(StringType.class).build()})
+    .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {
+        new FieldBuilder().name("severity").type(StringType.class).build(),
+        new FieldBuilder().name("lastUpdate")
+            .type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+        new FieldBuilder().name("pairing")
+            .type(CrewSchedulingUtils.getPairingCollectionType()).build(),
+        new FieldBuilder().name("flight")
+            .type(CrewSchedulingUtils.getPairingCollectionType()).build(),
+        new FieldBuilder().name("crew")
+            .type(CrewSchedulingUtils.getCrewMemberCollectionType()).build(),})
+    .build()).build()).build();
   }
 }
