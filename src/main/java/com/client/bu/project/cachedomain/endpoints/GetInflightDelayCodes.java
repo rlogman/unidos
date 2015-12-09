@@ -21,7 +21,7 @@ public class GetInflightDelayCodes extends ServiceDescriptorBuilder {
 
   public GetInflightDelayCodes() {
     name("getInflightDelayCodes")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-117")
     .urlPattern("")
     .filters(new Field[] {new FieldBuilder().name("tbd").type(StringType.class).build(),})
     .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {

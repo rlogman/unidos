@@ -17,7 +17,7 @@ public class GetLegalityInformation extends ServiceDescriptorBuilder {
 
   public GetLegalityInformation() {
     name("getLegalityInformation")
-    .description("")
+    .description("TBD")
     .urlPattern("")
     .filters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build()})
     .returnType(StringType.class).build();

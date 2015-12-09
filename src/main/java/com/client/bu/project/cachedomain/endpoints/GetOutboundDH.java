@@ -22,7 +22,7 @@ public class GetOutboundDH extends ServiceDescriptorBuilder {
 
   public GetOutboundDH() {
     name("getOutboundDH")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-120")
     .urlPattern("")
     .filters(new Field[] {
         new FieldBuilder().name("crewType").type(StringType.class)

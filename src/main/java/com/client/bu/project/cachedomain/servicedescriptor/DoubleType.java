@@ -6,4 +6,9 @@ public class DoubleType extends Primitive {
   public java.lang.String getType() {
     return "Double";
   }
+
+  @Override
+  public Object getObjectSample() {
+    return 0.5d;
+  }
 }

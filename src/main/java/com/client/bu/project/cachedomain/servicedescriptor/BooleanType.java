@@ -6,4 +6,9 @@ public class BooleanType extends Primitive {
   public java.lang.String getType() {
     return "Boolean";
   }
+
+  @Override
+  public Object getObjectSample() {
+    return true;
+  }
 }

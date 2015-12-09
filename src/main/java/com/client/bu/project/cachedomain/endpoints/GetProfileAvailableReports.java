@@ -21,7 +21,7 @@ public class GetProfileAvailableReports extends ServiceDescriptorBuilder {
 
   public GetProfileAvailableReports() {
     name("local.getProfileAvailableReports")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-16")
     .urlPattern("")
     .filters(new Field[] {new FieldBuilder().name("profileId").type(StringType.class).build(),})
     .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {

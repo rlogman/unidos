@@ -1,5 +1,7 @@
 package com.client.bu.project;
 
+import static com.client.bu.project.GenerationUtils.getJsonSchema;
+
 import java.io.IOException;
 
 import com.client.bu.project.cachedomain.dashboard.GetInflightDelayCodesRequest;
@@ -20,7 +22,6 @@ import com.client.bu.project.cachedomain.profile.GetFleetSelectionRequest;
 import com.client.bu.project.cachedomain.profile.GetFleetSelectionResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.factories.SchemaFactoryWrapper;
 
 public class GenerateJsonSchema {
@@ -49,12 +50,5 @@ public class GenerateJsonSchema {
         System.out.println(getJsonSchema(mapper, visitor, clazz));
       }
     }
-  }
-
-  private static <T> String getJsonSchema(ObjectMapper mapper, SchemaFactoryWrapper visitor,
-      Class<T> clazz) throws JsonProcessingException {
-    mapper.acceptJsonFormatVisitor(clazz, visitor);
-    JsonSchema schema = visitor.finalSchema();
-    return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(schema);
   }
 }

@@ -23,7 +23,7 @@ public class GetSummaryInformation extends ServiceDescriptorBuilder {
 
   public GetSummaryInformation() {
     name("getSummaryInformation")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-116")
     .urlPattern("")
     .filters(new Field[] {new FieldBuilder().name("tbdOther").type(StringType.class).build()})
     .returnType(new ObjectBuilder().fields(new Field[] {

@@ -22,7 +22,7 @@ public class GetPairingSummaryInformation extends ServiceDescriptorBuilder {
 
   public GetPairingSummaryInformation() {
     name("getPairingSummaryInformation")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-12")
     .urlPattern("")
     .filters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray())
     .returnType(

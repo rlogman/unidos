@@ -20,7 +20,7 @@ public class GetUnassignedInboundFAsReport extends ServiceDescriptorBuilder {
 
   public GetUnassignedInboundFAsReport() {
     name("getUnassignedInboundFAsReport")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-120")
     .urlPattern("")
     .filters(new Field[] {
         new FieldBuilder().name("crewType").type(StringType.class)

@@ -6,4 +6,9 @@ public class StringType extends Primitive {
   public java.lang.String getType() {
     return "String";
   }
+
+  @Override
+  public Object getObjectSample() {
+    return "";
+  }
 }

@@ -26,7 +26,7 @@ public class GetLineholdersOrReservesList extends ServiceDescriptorBuilder {
 
   public GetLineholdersOrReservesList() {
     name("getLineHoldersOrReservesList")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-74")
     .urlPattern("")
     .filters(new Field[] {
         new FieldBuilder().name("dateFrom").type(DateTimeType.UTC_DATE).build(),

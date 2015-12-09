@@ -6,4 +6,9 @@ public class Int64 extends Primitive {
   public java.lang.String getType() {
     return "Int64";
   }
+
+  @Override
+  public Object getObjectSample() {
+    return 1;
+  }
 }

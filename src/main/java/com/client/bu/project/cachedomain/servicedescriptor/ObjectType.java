@@ -2,6 +2,8 @@ package com.client.bu.project.cachedomain.servicedescriptor;
 
 import java.util.List;
 
+import net.sf.cglib.beans.BeanGenerator;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({"kind", "type", "description", "fields"})
@@ -46,5 +48,15 @@ public class ObjectType extends Type {
   @Override
   public java.lang.String getKind() {
     return "Object";
+  }
+
+  @Override
+  public Object getObjectSample() {
+    BeanGenerator g = new BeanGenerator();
+    g.setSuperclass(Object.class);
+    for (Field field : fields) {
+      g.addProperty(field.getName(), field.getType().getObjectSample().getClass());
+    }
+    return g.create();
   }
 }
