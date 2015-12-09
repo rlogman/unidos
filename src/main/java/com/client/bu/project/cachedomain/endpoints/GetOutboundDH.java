@@ -45,7 +45,6 @@ public class GetOutboundDH extends ServiceDescriptorBuilder {
                 new FieldBuilder().name("DOM").type(StringType.class).build(),
                 new FieldBuilder().name("number").type(Int32.class).build(),
                 new FieldBuilder().name("FTL").type(Int64.class).build(),
-                new FieldBuilder().name("DT").type(Int64.class).build(),
                 new FieldBuilder().name("DPT").type(StringType.class).build(),
                 new FieldBuilder().name("ARV").type(StringType.class).build(),
                 new FieldBuilder().name("DPTR").type(DateTimeType.DURATION_MINUTES).build(),

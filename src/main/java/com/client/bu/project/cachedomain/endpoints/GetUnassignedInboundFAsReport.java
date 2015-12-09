@@ -36,7 +36,6 @@ public class GetUnassignedInboundFAsReport extends ServiceDescriptorBuilder {
         new ObjectBuilder().fields(
             new Field[] {new FieldBuilder().name("STA").type(StringType.class).build(),
                 new FieldBuilder().name("FLT").type(StringType.class).build(),
-                new FieldBuilder().name("DT").type(Int32.class).build(),
                 new FieldBuilder().name("ARVL").type(DateTimeType.DURATION_MINUTES).build(),
                 new FieldBuilder().name("DTM").type(DateTimeType.DURATION_MINUTES).build(),
                 new FieldBuilder().name("ACM").type(DateTimeType.DURATION_MINUTES).build(),

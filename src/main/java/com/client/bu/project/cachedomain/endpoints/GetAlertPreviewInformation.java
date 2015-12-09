@@ -76,10 +76,6 @@ public class GetAlertPreviewInformation extends ServiceDescriptorBuilder {
             .name("date")
             .type(DateTimeType.UTC_DATE)
             .build(),
-            new FieldBuilder()
-            .name("pairingId")
-            .type(StringType.class)
-            .build(),
             new FieldBuilder().name("scheduledDepartureTimestamp")
             .type(DateTimeType.UTC_TIMESTAMP_MINUTES)
             .build(),
