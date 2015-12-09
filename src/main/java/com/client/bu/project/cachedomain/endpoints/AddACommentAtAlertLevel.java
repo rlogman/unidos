@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties. To change this
+ * template file, choose Tools | Templates and open the template in the editor.
  */
 package com.client.bu.project.cachedomain.endpoints;
 
@@ -15,29 +14,17 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
  *
  * @author berenice.morales
  */
-public class AddACommentAtAlertLevel  extends ServiceDescriptorBuilder {
-    
-    public AddACommentAtAlertLevel(){
-         this.name("addACommentAtAlertLevel");
-        this.description("");
-        this.urlPattern("");
-        this.parameters(new Field[]{
-            new FieldBuilder().name("alertId")
-            .type(StringType.class).build(),
-            new FieldBuilder().name("userId")
-            .type(StringType.class).build(),
-            new FieldBuilder().name("description")
-            .type(StringType.class).build(),
-            new FieldBuilder().name("tbdOther")
-            .type(StringType.class).build()
-        }
-        );
-        this.returnType(
-                new ObjectBuilder().fields(
-                        new Field[]{
-                            new FieldBuilder()
-                            .name("tbdOther")
-                            .type(StringType.class)
-                            .build()}).build());
-    }
+public class AddACommentAtAlertLevel extends ServiceDescriptorBuilder {
+
+  public AddACommentAtAlertLevel() {
+    name("local.addACommentAtAlertLevel")
+    .description("")
+    .urlPattern("")
+    .filters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build(),
+        new FieldBuilder().name("userId").type(StringType.class).build(),
+        new FieldBuilder().name("description").type(StringType.class).build(),
+        new FieldBuilder().name("tbdOther").type(StringType.class).build()})
+    .returnType(new ObjectBuilder().fields(
+        new Field[] {new FieldBuilder().name("tbdOther").type(StringType.class).build()}).build());
+  }
 }

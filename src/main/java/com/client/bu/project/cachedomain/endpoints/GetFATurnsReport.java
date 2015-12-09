@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties. To change this
+ * template file, choose Tools | Templates and open the template in the editor.
  */
 package com.client.bu.project.cachedomain.endpoints;
 
@@ -14,6 +13,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.ObjectBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.ObjectType;
 import com.client.bu.project.cachedomain.servicedescriptor.ServiceDescriptorBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.StringType;
+
 /**
  *
  * @author berenice.morales
@@ -21,6 +21,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
  * @version 1.0
  */
 public class GetFATurnsReport extends ServiceDescriptorBuilder {
+
 
 	public GetFATurnsReport() {
 		this.name("getFATurnsReport")
@@ -85,26 +86,14 @@ public class GetFATurnsReport extends ServiceDescriptorBuilder {
 		}).build()).build());
 	}
 
-	private static ObjectType getTurnSegmentType() {
-		return new ObjectBuilder().fields(new Field[] {
-				new FieldBuilder().name("flt")
-						.type(Int32.class)
-						.build(),
-				new FieldBuilder().name("dt")
-						.type(Int32.class)
-						.build(),
-				new FieldBuilder().name("airport")
-						.type(StringType.class)
-						.build(),
-				new FieldBuilder().name("gate")
-						.type(StringType.class)
-						.build(),
-				new FieldBuilder().name("timestamp")
-						.type(DateTimeType.UTC_TIMESTAMP_MINUTES)
-						.build(),
-				new FieldBuilder().name("rmks")
-						.type(StringType.class)
-						.build(),
-		}).build();
-	}
+
+  private static ObjectType getTurnSegmentType() {
+    return new ObjectBuilder().fields(new Field[] {
+        new FieldBuilder().name("flt").type(Int32.class).build(),
+        new FieldBuilder().name("dt").type(Int32.class).build(),
+        new FieldBuilder().name("airport").type(StringType.class).build(),
+        new FieldBuilder().name("gate").type(StringType.class).build(),
+        new FieldBuilder().name("timestamp").type(DateTimeType.UTC_TIMESTAMP_MINUTES).build(),
+        new FieldBuilder().name("rmks").type(StringType.class).build(),}).build();
+  }
 }

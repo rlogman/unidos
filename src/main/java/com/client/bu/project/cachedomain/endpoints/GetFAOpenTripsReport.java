@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties. To change this
+ * template file, choose Tools | Templates and open the template in the editor.
  */
 package com.client.bu.project.cachedomain.endpoints;
 
@@ -13,6 +12,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.Int32;
 import com.client.bu.project.cachedomain.servicedescriptor.ObjectBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.ServiceDescriptorBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.StringType;
+
 /**
  *
  * @author berenice.morales
@@ -20,6 +20,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
  * @version 1.0
  */
 public class GetFAOpenTripsReport extends ServiceDescriptorBuilder {
+
 
 	public GetFAOpenTripsReport() {
 		this.name("getFAOpenTripsReport")
@@ -91,4 +92,5 @@ public class GetFAOpenTripsReport extends ServiceDescriptorBuilder {
 						.build(),
 		}).build()).build());
 	}
+
 }

@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties. To change this
+ * template file, choose Tools | Templates and open the template in the editor.
  */
 package com.client.bu.project.cachedomain.endpoints;
 
@@ -19,6 +18,7 @@ import com.client.bu.project.cachedomain.util.CrewSchedulingUtils;
  * @author berenice.morales
  */
 public class GetAlertDetailListByType extends ServiceDescriptorBuilder {
+
     
     public GetAlertDetailListByType(){
         this.name("getAlertDetailListByType");
@@ -59,4 +59,5 @@ public class GetAlertDetailListByType extends ServiceDescriptorBuilder {
             .type(CrewSchedulingUtils.getCrewMemberCollectionType())
             .build(),}).build()).build()).build();
     }
+
 }
