@@ -6,4 +6,9 @@ public class Int32 extends Primitive {
   public java.lang.String getType() {
     return "Int32";
   }
+
+  @Override
+  public Object getObjectSample() {
+    return (short) 1;
+  }
 }

@@ -22,7 +22,7 @@ public class GetScheduleSummaryInformation extends ServiceDescriptorBuilder {
 
   public GetScheduleSummaryInformation() {
     name("getScheduleSummaryInformation")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-112")
     .urlPattern("")
     .filters(new Field[] {// TODO double-check this
     })

@@ -23,7 +23,7 @@ public class GetSummaryOfAlertStatus extends ServiceDescriptorBuilder {
 
   public GetSummaryOfAlertStatus() {
     name("getSummaryOfAlertStatus")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-13")
     .urlPattern("")
     .filters(CrewSchedulingUtils.getTimeframeAndTypeFieldArray())
     .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {

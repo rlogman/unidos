@@ -6,4 +6,9 @@ public class VoidType extends Type {
   public java.lang.String getKind() {
     return "Void";
   }
+
+  @Override
+  public Object getObjectSample() {
+    return null;
+  }
 }

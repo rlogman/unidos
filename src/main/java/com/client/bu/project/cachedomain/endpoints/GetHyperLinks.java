@@ -21,7 +21,7 @@ public class GetHyperLinks extends ServiceDescriptorBuilder {
 
   public GetHyperLinks() {
     name("local.getHyperLinks")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-46")
     .urlPattern("")
     .returnType(
         new CollectionBuilder()

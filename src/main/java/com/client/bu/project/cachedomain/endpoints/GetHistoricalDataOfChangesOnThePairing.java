@@ -21,8 +21,8 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetHistoricalDataOfChangesOnThePairing extends ServiceDescriptorBuilder {
 
   public GetHistoricalDataOfChangesOnThePairing() {
-    name("getHistoricalDataOfChangesOnThePairing")
-    .description("")
+    name("local.getHistoricalDataOfChangesOnThePairing")
+    .description("https://jira.globant.com/browse/UCI321-38")
     .urlPattern("")
     .filters(new Field[] {new FieldBuilder().name("paringId").type(StringType.class).build(),})
     .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(new Field[] {

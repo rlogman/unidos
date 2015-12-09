@@ -1,5 +1,7 @@
 package com.client.bu.project.cachedomain.servicedescriptor;
 
+import java.sql.Date;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({"kind", "type", "format", "timeZone"})
@@ -74,5 +76,10 @@ public class DateTimeType extends Primitive {
   @Override
   public java.lang.String getType() {
     return "DateTime";
+  }
+
+  @Override
+  public Object getObjectSample() {
+    return new Date(System.currentTimeMillis());
   }
 }

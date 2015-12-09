@@ -23,7 +23,7 @@ public class GetUnderGuaranteeFAReport extends ServiceDescriptorBuilder {
 
   public GetUnderGuaranteeFAReport() {
     name("getUnderGuaranteeFAReport")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-120")
     .urlPattern("")
     .filters(new Field[] {
         new FieldBuilder().name("crewType").type(StringType.class)

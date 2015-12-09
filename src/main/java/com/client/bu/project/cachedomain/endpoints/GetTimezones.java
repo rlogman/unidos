@@ -23,7 +23,7 @@ public class GetTimezones extends ServiceDescriptorBuilder {
 
   public GetTimezones() {
     name("local.getTimezones")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-146")
     .urlPattern("")
     .filters(new Field[] {})
     .returnType(new CollectionBuilder().itemType(new ObjectBuilder().fields(

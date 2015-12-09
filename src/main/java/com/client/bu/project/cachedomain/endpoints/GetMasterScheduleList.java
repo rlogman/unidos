@@ -25,7 +25,7 @@ public class GetMasterScheduleList extends ServiceDescriptorBuilder {
 
   public GetMasterScheduleList() {
     name("getMasterScheduleList")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-43")
     .urlPattern("")
     .filters(new Field[] { // TODO Validate
         new FieldBuilder().name("crewMemberId").type(StringType.class).build(),})
