@@ -20,7 +20,7 @@ public class GetContractualInformation extends ServiceDescriptorBuilder{
  
     public GetContractualInformation(){
         this.name("getContractualInformation");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-149");
         this.urlPattern("");
         this.parameters(new Field[]{
             new FieldBuilder().name("alertId")

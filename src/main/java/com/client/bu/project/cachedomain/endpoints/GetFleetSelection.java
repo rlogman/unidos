@@ -20,7 +20,7 @@ public class GetFleetSelection extends ServiceDescriptorBuilder {
 
     public GetFleetSelection() {
         this.name("getFleetSelection");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-134");
         this.urlPattern("");
         this.filters(new Field[]{
             new FieldBuilder().name("profile")

@@ -22,7 +22,7 @@ public class GetAlertDetailsHistory extends ServiceDescriptorBuilder {
 
     public GetAlertDetailsHistory() {
         this.name("getAlertDetailHistory");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-30");
         this.urlPattern("");
         this.parameters(new Field[]{
             new FieldBuilder().name("alertId")

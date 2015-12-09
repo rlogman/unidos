@@ -24,7 +24,7 @@ public class GetAlertsTailView extends ServiceDescriptorBuilder {
 
     public GetAlertsTailView() {
         this.name("getAlertsTailView");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-143");
         this.urlPattern("");
         this.filters(new Field[]{
             CrewSchedulingUtils.getTimeframeField(),

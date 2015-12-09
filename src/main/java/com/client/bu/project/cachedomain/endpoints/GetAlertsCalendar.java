@@ -21,7 +21,7 @@ public class GetAlertsCalendar extends ServiceDescriptorBuilder {
 
     public GetAlertsCalendar() {
         this.name("seeAlertsCalendar");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-164");
         this.urlPattern("");
         this.filters(new Field[]{
             new FieldBuilder().name("month")

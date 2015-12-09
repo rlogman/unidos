@@ -22,14 +22,13 @@ public class GetAlertDetailListByType extends ServiceDescriptorBuilder {
     
     public GetAlertDetailListByType(){
         this.name("getAlertDetailListByType");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-48");
         this.urlPattern("");
         this.parameters(new Field[]{
             new FieldBuilder().name("type")
             .type(StringType.class).build(),
             new FieldBuilder().name("general")
-            .type(StringType.class)
-            .possibleValues(new String[]{"high", "medium", "low"}).build(),
+            .type(StringType.class).build(),
             CrewSchedulingUtils.getTimeframeField(),
            new FieldBuilder().name("sortType")
             .possibleValues(new String[]{
@@ -53,7 +52,7 @@ public class GetAlertDetailListByType extends ServiceDescriptorBuilder {
             .build(),
             new FieldBuilder()
             .name("flight")
-            .type(CrewSchedulingUtils.getPairingCollectionType())
+            .type(CrewSchedulingUtils.getFlightLegCollectionType())
             .build(),
             new FieldBuilder()
             .name("crew")

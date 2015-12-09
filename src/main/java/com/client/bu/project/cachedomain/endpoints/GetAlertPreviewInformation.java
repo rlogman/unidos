@@ -24,7 +24,7 @@ public class GetAlertPreviewInformation extends ServiceDescriptorBuilder {
 
     public GetAlertPreviewInformation() {
         this.name("getAlertPreviewInformation");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-114");
         this.urlPattern("");
         this.filters(new Field[]{
             new FieldBuilder()

@@ -22,7 +22,7 @@ public class GetAlertManagementDashboard extends ServiceDescriptorBuilder {
 
     public GetAlertManagementDashboard() {
         this.name("local.getAlertManagementDashboard");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-139");
         this.urlPattern("");
         this.filters(new Field[]{
             new FieldBuilder().name("profileId") // TODO double-check this; it seems invalid

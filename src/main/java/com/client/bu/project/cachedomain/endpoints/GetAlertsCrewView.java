@@ -24,7 +24,7 @@ public class GetAlertsCrewView extends ServiceDescriptorBuilder {
 
     public GetAlertsCrewView() {
         this.name("getAlertsCrewView");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-144");
         this.urlPattern("");
         this.filters(new Field[]{
             CrewSchedulingUtils.getTimeframeField(),

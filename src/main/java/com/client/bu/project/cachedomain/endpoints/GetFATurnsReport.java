@@ -23,7 +23,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class GetFATurnsReport extends ServiceDescriptorBuilder {
 
 	public GetFATurnsReport() {
-		this.name("getLineHoldersOrReservesList")
+		this.name("getFATurnsReport")
 		.description("")
 		.urlPattern("")
 		.filters(new Field[] {

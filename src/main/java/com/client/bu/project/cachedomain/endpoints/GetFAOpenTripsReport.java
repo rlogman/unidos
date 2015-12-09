@@ -23,7 +23,7 @@ public class GetFAOpenTripsReport extends ServiceDescriptorBuilder {
 
 	public GetFAOpenTripsReport() {
 		this.name("getFAOpenTripsReport")
-		.description("")
+		.description("https://jira.globant.com/browse/UCI321-120")
 		.urlPattern("")
 		.filters(new Field[] {
 				new FieldBuilder().name("crewType")

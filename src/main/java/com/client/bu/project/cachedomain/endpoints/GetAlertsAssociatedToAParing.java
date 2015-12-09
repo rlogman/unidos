@@ -24,7 +24,7 @@ public class GetAlertsAssociatedToAParing extends ServiceDescriptorBuilder {
 
     public GetAlertsAssociatedToAParing() {
         this.name("getAlertsAssociatedToAParing");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-157");
         this.urlPattern("");
         this.filters(new Field[]{
             CrewSchedulingUtils.getTimeframeField(),

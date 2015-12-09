@@ -23,7 +23,7 @@ public class GetCommentsAssociatedToAPairing extends ServiceDescriptorBuilder {
 
     public GetCommentsAssociatedToAPairing() {
         this.name("getCommentsAssociatedToAPairing");
-        this.description("");
+        this.description("https://jira.globant.com/browse/UCI321-158");
         this.urlPattern("");
         this.filters(new Field[]{
             new FieldBuilder().name("paringId")
