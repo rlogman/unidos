@@ -20,7 +20,7 @@ public class ChangeFleetSelection extends ServiceDescriptorBuilder {
 
   public ChangeFleetSelection() {
     name("local.changeFleetSelection")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-134")
     .urlPattern("")
     .filters(new Field[] {new FieldBuilder().name("selection").type(StringType.class).build(),
         new FieldBuilder().name("type").type(StringType.class).build(),

@@ -25,7 +25,7 @@ public class GetFATurnsReport extends ServiceDescriptorBuilder {
 
 	public GetFATurnsReport() {
 		this.name("getFATurnsReport")
-		.description("")
+		.description("https://jira.globant.com/browse/UCI321-120")
 		.urlPattern("")
 		.filters(new Field[] {
 				new FieldBuilder().name("crewType")

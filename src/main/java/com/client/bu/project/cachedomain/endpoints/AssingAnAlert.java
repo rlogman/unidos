@@ -17,8 +17,8 @@ public class AssingAnAlert extends ServiceDescriptorBuilder {
 
   public AssingAnAlert() {
     name("local.assingAnAlert")
-    .description("")
-    .urlPattern("")
+    .description("https://jira.globant.com/browse/UCI321-27")
+    .urlPattern("https://jira.globant.com/browse/UCI321-29")
     .filters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build(),
         new FieldBuilder().name("userId").type(StringType.class).build()})
     .returnType(StringType.class).build();

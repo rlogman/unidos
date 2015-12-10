@@ -20,7 +20,7 @@ public class ChangeBaseSelection extends ServiceDescriptorBuilder {
 
   public ChangeBaseSelection() {
     name("local.changeBaseSelection")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-134")
     .urlPattern("")
     .filters(new Field[] {
         new FieldBuilder().name("selection").type(StringType.class).build(),

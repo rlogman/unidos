@@ -20,7 +20,7 @@ public class AddACommentAtPairingLevel extends ServiceDescriptorBuilder {
 
   public AddACommentAtPairingLevel() {
     name("local.addACommentAtPairingLevel")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-38")
     .urlPattern("")
     .filters(new Field[] {new FieldBuilder().name("paringId").type(StringType.class).build(),
         new FieldBuilder().name("userId").type(StringType.class).build(),

@@ -18,7 +18,7 @@ public class AddACommentAtAlertLevel extends ServiceDescriptorBuilder {
 
   public AddACommentAtAlertLevel() {
     name("local.addACommentAtAlertLevel")
-    .description("")
+    .description("https://jira.globant.com/browse/UCI321-164")
     .urlPattern("")
     .filters(new Field[] {new FieldBuilder().name("alertId").type(StringType.class).build(),
         new FieldBuilder().name("userId").type(StringType.class).build(),
