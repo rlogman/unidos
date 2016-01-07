@@ -15,26 +15,25 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
  */
 public class UserDocument extends ObjectBuilder {
 
-  public UserDocument() {
-    fields(
-        new Field[] {
-        		new FieldBuilder().name("userId")
-        				.type(StringType.class).build(),
-                new FieldBuilder().name("username")
-        				.type(StringType.class).build(),
-                new FieldBuilder().name("email")
-        				.type(StringType.class).build(),
-                new FieldBuilder().name("profile")
-        				.type(new ObjectBuilder().fields(new Field[] {
-                                new FieldBuilder()
-                                .name("idProfileDocument")
-                                .type(StringType.class)
-                                .build(),
-                            new FieldBuilder()
-                                .name("name")
-                                .type(StringType.class)
-                                .build(),})
-                    .build()).build(),
-        }).build();
-  }
+    public UserDocument() {
+        fields(
+                new Field[]{
+                    new FieldBuilder().name("userId")
+                    .type(StringType.class).build(),
+                    new FieldBuilder().name("username")
+                    .type(StringType.class).build(),
+                    new FieldBuilder().name("email")
+                    .type(StringType.class).build(),
+                    new FieldBuilder().name("profile")
+                    .type(new ObjectBuilder().fields(new Field[]{
+                        new FieldBuilder()
+                        .name("idProfileDocument")
+                        .type(StringType.class)
+                        .build(),
+                        new FieldBuilder()
+                        .name("name")
+                        .type(StringType.class)
+                        .build(),})
+                            .build()).build(),}).build();
+    }
 }
