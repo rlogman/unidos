@@ -18,6 +18,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class ProfileDocument extends ObjectBuilder {
 
     public ProfileDocument() {
+        description("Contain data information about profile").build();
         fields(
                 new Field[]{
                     new FieldBuilder().name("properties")

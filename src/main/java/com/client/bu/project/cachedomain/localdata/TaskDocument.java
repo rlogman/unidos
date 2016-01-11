@@ -18,6 +18,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class TaskDocument extends ObjectBuilder {
  
     public TaskDocument() {
+     description("Describe all task with its comments and data information").build();
      fields(
                 new Field[]{
                     new FieldBuilder().name("taskId")

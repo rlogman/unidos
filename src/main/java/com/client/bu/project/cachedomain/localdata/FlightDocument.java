@@ -18,6 +18,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class FlightDocument extends ObjectBuilder {
 
     public FlightDocument() {
+        description("Describe all flights with its comments and data information").build();
         fields(
                 new Field[]{
                     new FieldBuilder()

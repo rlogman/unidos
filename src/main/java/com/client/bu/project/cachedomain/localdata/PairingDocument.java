@@ -18,6 +18,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class PairingDocument extends ObjectBuilder {
     
     public PairingDocument() {
+    description("Describe all pairings with its comments and data information").build();
     fields(
                 new Field[]{
                     new FieldBuilder()

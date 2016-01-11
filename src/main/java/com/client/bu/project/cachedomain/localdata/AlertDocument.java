@@ -18,6 +18,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class AlertDocument extends ObjectBuilder {
 
     public AlertDocument() {
+        description("Describe all alerts with its comments and data information").build();
         fields(
                 new Field[]{
                     new FieldBuilder().name("alertId")

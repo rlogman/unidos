@@ -16,6 +16,7 @@ import com.client.bu.project.cachedomain.servicedescriptor.StringType;
 public class UserDocument extends ObjectBuilder {
 
     public UserDocument() {
+        description("Contain data information about user").build();
         fields(
                 new Field[]{
                     new FieldBuilder().name("userId")
