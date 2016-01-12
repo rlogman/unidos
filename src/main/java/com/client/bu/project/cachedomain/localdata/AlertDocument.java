@@ -6,6 +6,7 @@
 package com.client.bu.project.cachedomain.localdata;
 
 import com.client.bu.project.cachedomain.servicedescriptor.CollectionBuilder;
+import com.client.bu.project.cachedomain.servicedescriptor.DateTimeType;
 import com.client.bu.project.cachedomain.servicedescriptor.Field;
 import com.client.bu.project.cachedomain.servicedescriptor.FieldBuilder;
 import com.client.bu.project.cachedomain.servicedescriptor.ObjectBuilder;
@@ -49,25 +50,26 @@ public class AlertDocument extends ObjectBuilder {
                         .build(),
                         new FieldBuilder()
                         .name("scheduleDepartDatatime")
-                        .type(StringType.class)
+                        .type(DateTimeType.UTC_DATE)
                         .build(),
                         new FieldBuilder()
                         .name("actualDepartTime")
-                        .type(StringType.class)
+                        .type(DateTimeType.UTC_DATE)
                         .build(),
                         new FieldBuilder()
                         .name("scheduleArriveDatatime")
-                        .type(StringType.class)
+                        .type(DateTimeType.UTC_DATE)
                         .build(),
                         new FieldBuilder()
                         .name("actualArriveTime")
-                        .type(StringType.class)
+                        .type(DateTimeType.UTC_DATE
+                        )
                         .build(),})
                             .build()).build(),
                     new FieldBuilder().name("eventId")
                     .type(StringType.class).build(),
                     new FieldBuilder().name("triggeringTimestamp")
-                    .type(StringType.class).build(),
+                    .type(DateTimeType.UTC_DATE).build(),
                     new FieldBuilder().name("alertJsonData")
                     .type(StringType.class).build(),
                     new FieldBuilder().name("status")
@@ -84,11 +86,11 @@ public class AlertDocument extends ObjectBuilder {
                                 new FieldBuilder().name("commentAttachment")
                                 .type(new CollectionBuilder().itemType(
                                      new ObjectBuilder().fields(new Field[]{
-                                        new FieldBuilder().name("file")
+                                        new FieldBuilder().name("fileURI")
                                         .type(StringType.class).build(),
                                         new FieldBuilder().name("fileName")
                                         .type(StringType.class).build(),
-                                        new FieldBuilder().name("contectType")
+                                        new FieldBuilder().name("contentType")
                                         .type(StringType.class)
                                .build()}).build()).build())
                                .build()}).build()).build()).build()

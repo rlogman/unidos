@@ -45,11 +45,11 @@ public class PairingDocument extends ObjectBuilder {
                                         new FieldBuilder().name("commentAttachment")
                                         .type(new CollectionBuilder().itemType(
                                                         new ObjectBuilder().fields(new Field[]{
-                                                            new FieldBuilder().name("file")
+                                                            new FieldBuilder().name("fileURI")
                                                             .type(StringType.class).build(),
                                                             new FieldBuilder().name("fileName")
                                                             .type(StringType.class).build(),
-                                                            new FieldBuilder().name("contectType")
+                                                            new FieldBuilder().name("contentType")
                                                             .type(StringType.class)
                                                             .build()}).build()).build())
                                         .build()}).build()).build()).build()}).build();
